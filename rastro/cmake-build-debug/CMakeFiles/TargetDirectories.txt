@@ -1,3 +1,3 @@
-/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir
-/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir

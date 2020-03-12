@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/gusto/CLionProjects/rastro/dados.c" "/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir/dados.c.o"
-  "/home/gusto/CLionProjects/rastro/interface.c" "/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir/interface.c.o"
-  "/home/gusto/CLionProjects/rastro/logica.c" "/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir/logica.c.o"
-  "/home/gusto/CLionProjects/rastro/main.c" "/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir/main.c.o"
+  "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/dados.c" "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/dados.c.o"
+  "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/interface.c" "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/interface.c.o"
+  "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/logica.c" "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/logica.c.o"
+  "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/main.c" "/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

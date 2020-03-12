@@ -8,98 +8,98 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/gusto/CLionProjects/rastro/cmake-build-debug"/>
+				<Option working_dir="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/gusto/CLionProjects/rastro/cmake-build-debug"/>
+				<Option working_dir="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rastro">
-				<Option output="/home/gusto/CLionProjects/rastro/cmake-build-debug/rastro" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gusto/CLionProjects/rastro/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rastro"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rastro/fast">
-				<Option output="/home/gusto/CLionProjects/rastro/cmake-build-debug/rastro" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gusto/CLionProjects/rastro/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rastro/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/gusto/CLionProjects/rastro/cmake-build-debug"/>
+				<Option working_dir="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gusto/CLionProjects/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rastro">
+				<Option output="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/rastro" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rastro"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rastro/fast">
+				<Option output="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/rastro" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 rastro/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/gusto/CLionProjects/rastro/dados.c">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/dados.c">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/dados.h">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/dados.h">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/interface.c">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/interface.c">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/interface.h">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/interface.h">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/logica.c">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/logica.c">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/logica.h">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/logica.h">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/main.c">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/main.c">
 			<Option target="rastro"/>
 		</Unit>
-		<Unit filename="/home/gusto/CLionProjects/rastro/CMakeLists.txt">
+		<Unit filename="/Users/maria/Desktop/MIEI/Li2Pl7g02/rastro/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

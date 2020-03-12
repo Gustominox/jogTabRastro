@@ -2,7 +2,7 @@
 -Projeto Li2  
 -Turno PL7  
 -Grupo 02  
-##### Membros:
+### Membros:
 Augusto César Oliveira Campos a93320<br/>
 Ana Paula Oliveira Henriques a  
 Paula Ricardo Santos Pereira a93245  

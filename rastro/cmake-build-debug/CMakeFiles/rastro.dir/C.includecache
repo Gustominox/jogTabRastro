@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gusto/CLionProjects/rastro/dados.h
+
+/home/gusto/CLionProjects/rastro/interface.c
+stdio.h
+-
+string.h
+-
+logica.h
+/home/gusto/CLionProjects/rastro/logica.h
+dados.h
+/home/gusto/CLionProjects/rastro/dados.h
+
+/home/gusto/CLionProjects/rastro/interface.h
+
+/home/gusto/CLionProjects/rastro/logica.h
+dados.h
+/home/gusto/CLionProjects/rastro/dados.h
+
+/home/gusto/CLionProjects/rastro/main.c
+dados.h
+/home/gusto/CLionProjects/rastro/dados.h
+interface.h
+/home/gusto/CLionProjects/rastro/interface.h
+logica.h
+/home/gusto/CLionProjects/rastro/logica.h
+

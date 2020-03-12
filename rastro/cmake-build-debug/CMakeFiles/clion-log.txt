@@ -1,0 +1,4 @@
+/home/gusto/Desktop/clion-2019.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gusto/CLionProjects/rastro
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/gusto/CLionProjects/rastro/cmake-build-debug

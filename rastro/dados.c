@@ -17,13 +17,3 @@ ESTADO *inicializar_estado() {
     e->tab[4][4] = BRANCA;
     return e;
 }
-/*
-typedef struct {
-    CASA tab[8][8];
-    COORDENADA ultima_jogada;
-    JOGADAS jogadas;
-    int num_jogadas;
-    int jogador_atual;
-} ESTADO;
- */
-// Falta a resto da inicialização.

@@ -43,10 +43,10 @@ RM = /home/gusto/Desktop/clion-2019.3.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gusto/CLionProjects/rastro
+CMAKE_SOURCE_DIR = /home/gusto/Desktop/li2/Li2Pl7g02/rastro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gusto/CLionProjects/rastro/cmake-build-debug
+CMAKE_BINARY_DIR = /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rastro.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/rastro.dir/flags.make
 
 CMakeFiles/rastro.dir/main.c.o: CMakeFiles/rastro.dir/flags.make
 CMakeFiles/rastro.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/rastro.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/main.c.o   -c /home/gusto/CLionProjects/rastro/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/rastro.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/main.c.o   -c /home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c
 
 CMakeFiles/rastro.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rastro.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/CLionProjects/rastro/main.c > CMakeFiles/rastro.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c > CMakeFiles/rastro.dir/main.c.i
 
 CMakeFiles/rastro.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rastro.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/CLionProjects/rastro/main.c -o CMakeFiles/rastro.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c -o CMakeFiles/rastro.dir/main.c.s
 
 CMakeFiles/rastro.dir/dados.c.o: CMakeFiles/rastro.dir/flags.make
 CMakeFiles/rastro.dir/dados.c.o: ../dados.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rastro.dir/dados.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/dados.c.o   -c /home/gusto/CLionProjects/rastro/dados.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rastro.dir/dados.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/dados.c.o   -c /home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.c
 
 CMakeFiles/rastro.dir/dados.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rastro.dir/dados.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/CLionProjects/rastro/dados.c > CMakeFiles/rastro.dir/dados.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.c > CMakeFiles/rastro.dir/dados.c.i
 
 CMakeFiles/rastro.dir/dados.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rastro.dir/dados.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/CLionProjects/rastro/dados.c -o CMakeFiles/rastro.dir/dados.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.c -o CMakeFiles/rastro.dir/dados.c.s
 
 CMakeFiles/rastro.dir/logica.c.o: CMakeFiles/rastro.dir/flags.make
 CMakeFiles/rastro.dir/logica.c.o: ../logica.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/rastro.dir/logica.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/logica.c.o   -c /home/gusto/CLionProjects/rastro/logica.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/rastro.dir/logica.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/logica.c.o   -c /home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.c
 
 CMakeFiles/rastro.dir/logica.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rastro.dir/logica.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/CLionProjects/rastro/logica.c > CMakeFiles/rastro.dir/logica.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.c > CMakeFiles/rastro.dir/logica.c.i
 
 CMakeFiles/rastro.dir/logica.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rastro.dir/logica.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/CLionProjects/rastro/logica.c -o CMakeFiles/rastro.dir/logica.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.c -o CMakeFiles/rastro.dir/logica.c.s
 
 CMakeFiles/rastro.dir/interface.c.o: CMakeFiles/rastro.dir/flags.make
 CMakeFiles/rastro.dir/interface.c.o: ../interface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rastro.dir/interface.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/interface.c.o   -c /home/gusto/CLionProjects/rastro/interface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rastro.dir/interface.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/rastro.dir/interface.c.o   -c /home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.c
 
 CMakeFiles/rastro.dir/interface.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rastro.dir/interface.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/CLionProjects/rastro/interface.c > CMakeFiles/rastro.dir/interface.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.c > CMakeFiles/rastro.dir/interface.c.i
 
 CMakeFiles/rastro.dir/interface.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rastro.dir/interface.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/CLionProjects/rastro/interface.c -o CMakeFiles/rastro.dir/interface.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.c -o CMakeFiles/rastro.dir/interface.c.s
 
 # Object files for target rastro
 rastro_OBJECTS = \
@@ -125,7 +125,7 @@ rastro: CMakeFiles/rastro.dir/logica.c.o
 rastro: CMakeFiles/rastro.dir/interface.c.o
 rastro: CMakeFiles/rastro.dir/build.make
 rastro: CMakeFiles/rastro.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable rastro"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable rastro"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rastro.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/rastro.dir/clean:
 .PHONY : CMakeFiles/rastro.dir/clean
 
 CMakeFiles/rastro.dir/depend:
-	cd /home/gusto/CLionProjects/rastro/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gusto/CLionProjects/rastro /home/gusto/CLionProjects/rastro /home/gusto/CLionProjects/rastro/cmake-build-debug /home/gusto/CLionProjects/rastro/cmake-build-debug /home/gusto/CLionProjects/rastro/cmake-build-debug/CMakeFiles/rastro.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gusto/Desktop/li2/Li2Pl7g02/rastro /home/gusto/Desktop/li2/Li2Pl7g02/rastro /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rastro.dir/depend
 

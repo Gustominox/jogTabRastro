@@ -6,29 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/gusto/CLionProjects/rastro/dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.h
 
-/home/gusto/CLionProjects/rastro/interface.c
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.h
+
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.h
+dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.h
+
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c
+dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.h
+interface.h
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.h
+logica.h
+/home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.h
 stdio.h
 -
-string.h
--
-logica.h
-/home/gusto/CLionProjects/rastro/logica.h
-dados.h
-/home/gusto/CLionProjects/rastro/dados.h
-
-/home/gusto/CLionProjects/rastro/interface.h
-
-/home/gusto/CLionProjects/rastro/logica.h
-dados.h
-/home/gusto/CLionProjects/rastro/dados.h
-
-/home/gusto/CLionProjects/rastro/main.c
-dados.h
-/home/gusto/CLionProjects/rastro/dados.h
-interface.h
-/home/gusto/CLionProjects/rastro/interface.h
-logica.h
-/home/gusto/CLionProjects/rastro/logica.h
 

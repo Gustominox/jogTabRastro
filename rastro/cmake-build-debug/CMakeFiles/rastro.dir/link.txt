@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/rastro.dir/main.c.o CMakeFiles/rastro.dir/dados.c.o CMakeFiles/rastro.dir/logica.c.o CMakeFiles/rastro.dir/interface.c.o  -o rastro 
+/usr/bin/cc -g   CMakeFiles/rastro.dir/main.c.o CMakeFiles/rastro.dir/dados.c.o CMakeFiles/rastro.dir/logica.c.o CMakeFiles/rastro.dir/interface.c.o  -o rastro 

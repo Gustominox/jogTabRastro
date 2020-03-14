@@ -4,7 +4,6 @@
 
 #include "dados.h"
 #include <stdio.h>
-
 // Primeiramente, é definido a alteração do jogador (se o jogador anterior for o 1, então muda para o 2, e vice-versa).
 // A seguir, é colocada uma peça preta na coordenada anterior e uma peça branca na coordenada atual.
 // Consoante o jogador atual, são guardados os valores da coluna e da linha atuais.
@@ -16,14 +15,14 @@ int jogar(ESTADO *e, COORDENADA c) {
     e->tab [c.coluna - 1][c.linha - 1] = BRANCA;
     e->ultima_jogada.coluna = c.coluna;
     e->ultima_jogada.linha = c.linha;
-    if (e->jogador_atual == 1) {
-        e->jogadas[e->num_jogadas].jogador1.coluna = c.coluna;
-        e->jogadas[e->num_jogadas].jogador1.linha = c.linha;
+    if (obter_jogador_atual(e) == 1) {
+        e->jogadas[obter_numero_de_jogadas(e)].jogador1.coluna = c.coluna;
+        e->jogadas[obter_numero_de_jogadas(e)].jogador1.linha = c.linha;
         e->jogador_atual = 2;
-    } else (e->jogador_atual == 2) {
+    } else {
         e->jogadas->jogador2.coluna = c.coluna;
         e->jogadas->jogador2.linha = c.linha;
-        e->num_jogadas++; //= e->num_jogadas + 1;
+        e->num_jogadas++;
         e->jogador_atual = 1;
     }
     return 1;

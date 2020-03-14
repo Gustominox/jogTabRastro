@@ -17,3 +17,16 @@ ESTADO *inicializar_estado() {
     e->tab[4][4] = BRANCA;
     return e;
 }
+
+int obter_jogador_atual(ESTADO *estado){
+    return estado->jogador_atual;
+}
+
+int obter_numero_de_jogadas(ESTADO *estado){
+    return estado->num_jogadas;
+}
+
+CASA obter_estado_casa(ESTADO *e, int i, int j){
+    CASA casa = e->tab[i] [j];
+    return casa;
+}

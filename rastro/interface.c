@@ -22,39 +22,39 @@ Para ser colocada cada letra que por baixo da sua coluna foi usado um printf de 
 por baixo da primeira coluna e por aí adiante.
 */
 void mostrar_tabuleiro(ESTADO *e) {
-    int c = 6;
+    int col = 6;
     printf ("8|");
     for (int i = 0; i < 7; i++) {
-        if (e->tab[i][0] == VAZIO)
+        if (obter_estado_casa(e,i,7) == VAZIO)
             printf(".");
-        if (e->tab[i][0] == BRANCA)
+        if (obter_estado_casa(e,i,7) == BRANCA)
             printf("*");
-        if (e->tab[i][0] == PRETA)
+        if (obter_estado_casa(e,i,7) == PRETA)
             printf("#");
     }
     printf("2\n");
     printf("7|");
-    for (int j = 1; j < 6; ++j) {
+    for (int j = 6; j > 0; --j) {
         for (int i = 0; i < 8; ++i) {
-            if (e->tab[i][j] == VAZIO)
+            if (obter_estado_casa(e,i,j) == VAZIO)
                 printf(".");
-            if (e->tab[i][j] == BRANCA)
+            if (obter_estado_casa(e,i,j) == BRANCA)
                 printf("*");
-            if (e->tab[i][j] == PRETA)
+            if (obter_estado_casa(e,i,j) == PRETA)
                 printf("#");
         }
 
         printf("\n");
-        printf ("%d", c--);
+        printf ("%d", col--);
         printf ("|");
     }
     printf("1");
     for (int i = 1; i < 8; i++) {
-        if (e->tab[i][7] == VAZIO)
+        if (obter_estado_casa(e,i,0) == VAZIO)
             printf(".");
-        if (e->tab[i][7] == BRANCA)
+        if (obter_estado_casa(e,i,0) == BRANCA)
             printf("*");
-        if (e->tab[i][7] == PRETA)
+        if (obter_estado_casa(e,i,0) == PRETA)
             printf("#");
     }
     printf ("\n  ABCDEFGH");

@@ -17,13 +17,16 @@ ESTADO *inicializar_estado() {
     e->tab[4][4] = BRANCA;
     return e;
 }
-/*
-typedef struct {
-    CASA tab[8][8];
-    COORDENADA ultima_jogada;
-    JOGADAS jogadas;
-    int num_jogadas;
-    int jogador_atual;
-} ESTADO;
- */
-// Falta a resto da inicialização.
+
+int obter_jogador_atual(ESTADO *estado){
+    return estado->jogador_atual;
+}
+
+int obter_numero_de_jogadas(ESTADO *estado){
+    return estado->num_jogadas;
+}
+
+CASA obter_estado_casa(ESTADO *e, int i, int j){
+    CASA casa = e->tab[i] [j];
+    return casa;
+}

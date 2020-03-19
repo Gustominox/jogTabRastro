@@ -6,5 +6,5 @@
 #define RASTRO_INTERFACE_H
 
 int interpretador(ESTADO *e);
-
+void mostrar_tabuleiro(ESTADO *e);
 #endif //RASTRO_INTERFACE_H

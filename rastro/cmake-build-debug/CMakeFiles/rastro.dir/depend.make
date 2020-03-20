@@ -6,6 +6,7 @@ CMakeFiles/rastro.dir/dados.c.o: ../dados.h
 
 CMakeFiles/rastro.dir/interface.c.o: ../dados.h
 CMakeFiles/rastro.dir/interface.c.o: ../interface.c
+CMakeFiles/rastro.dir/interface.c.o: ../interface.h
 CMakeFiles/rastro.dir/interface.c.o: ../logica.h
 
 CMakeFiles/rastro.dir/logica.c.o: ../dados.h

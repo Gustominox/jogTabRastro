@@ -22,12 +22,12 @@ int main()
         3|........      2|.|.|.|.|.|.|.|.|
         2|........      1|.|.|.|.|.|.|.|.|
         1|1.......      0|1|.|.|.|.|.|.|.|
-          ABCDEFGH        0|1|2|3|4567
-
-        VAZIO -> 0 | BRANCA -> 1 | PRETA -> 2
+          ABCDEFGH        0|1|2|3|4|5|6|7|
      */
-    //printf("%u\n%u\n%u\n",e->tab[3][3] ,e->tab[4][4] ,e->tab[5][5]);
+
     mostrar_tabuleiro(e);
-    interpretador(e);
+    int menu = 1;
+    while (menu == 1)
+    menu = interpretador(e);
     return 0;
 }

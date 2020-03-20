@@ -12,7 +12,7 @@
 // Se a peça branca acabar na casa (0,0), ganha o jogador 1. Se acabar na casa (7,7), ganha o jogador 2.
 
 int jogar(ESTADO *e, COORDENADA c) {
-    if (obter_estado_casa(e,c.coluna - 1, c.linha - 1) == VAZIO){
+    if (obter_estado_casa(e,c.coluna - 1, c.linha - 1) == VAZIO ||obter_estado_casa(e,c.coluna - 1, c.linha - 1) == UM ||obter_estado_casa(e,c.coluna - 1, c.linha - 1) == DOIS ){
         int x = e->ultima_jogada.coluna;
         int y = e->ultima_jogada.linha;
         for (int i = x-1; i < x+2 ; i++) {
@@ -28,19 +28,31 @@ int jogar(ESTADO *e, COORDENADA c) {
                             e->jogadas[obter_numero_de_jogadas(e)].jogador1.coluna = c.coluna;
                             e->jogadas[obter_numero_de_jogadas(e)].jogador1.linha = c.linha;
                             e->jogador_atual = 2;
+                            e->num_jogadas++;
                         } else {
                             e->jogadas->jogador2.coluna = c.coluna;
                             e->jogadas->jogador2.linha = c.linha;
-                            e->num_jogadas++;
                             e->jogador_atual = 1;
                             }
+                    }else {
+                        printf ("Jogada invalida. Tente novamente. Tipo:3\n");
+                        return 1;
                     }
                 }
+            }else {
+                printf ("Jogada invalida. Tente novamente. Tipo:2\n");
+                return 1;
             }
         }
     }
-    else printf ("Jogada invalida. Tente novamente.\n");
-    if (obter_estado_casa(e,0,0) == BRANCA) printf ("Venceu o jogador 1.\n");
-    if (obter_estado_casa(e,7,7) == BRANCA) printf ("Venceu o jogador 2.\n");
+    else printf ("Jogada invalida. Tente novamente. Tipo:1\n");
+    if (obter_estado_casa(e,0,0) == BRANCA){
+        printf ("Venceu o jogador 1.\n");
+        return 0;
+    }
+    if (obter_estado_casa(e,7,7) == BRANCA) {
+        printf ("Venceu o jogador 2.\n");
+        return 0;
+    }
     return 1;
 }

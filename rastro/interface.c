@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "interface.h"
 #include "logica.h"
 #include "dados.h"
 #define BUF_SIZE 1024
@@ -24,16 +25,17 @@ por baixo da primeira coluna e por aí adiante.
 void mostrar_tabuleiro(ESTADO *e) {
     int col = 6;
     printf ("8|");
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 8; i++) {
         if (obter_estado_casa(e,i,7) == VAZIO)
             printf(".");
         if (obter_estado_casa(e,i,7) == BRANCA)
             printf("*");
         if (obter_estado_casa(e,i,7) == PRETA)
             printf("#");
+        if (obter_estado_casa(e,i,7) == DOIS)
+            printf("2");
     }
-    printf("2\n");
-    printf("7|");
+    printf("\n7|");
     for (int j = 6; j > 0; --j) {
         for (int i = 0; i < 8; ++i) {
             if (obter_estado_casa(e,i,j) == VAZIO)
@@ -48,8 +50,9 @@ void mostrar_tabuleiro(ESTADO *e) {
         printf ("%d", col--);
         printf ("|");
     }
-    printf("1");
-    for (int i = 1; i < 8; i++) {
+    for (int i = 0; i < 8; i++) {
+        if (obter_estado_casa(e,i,0) == UM)
+            printf("1");
         if (obter_estado_casa(e,i,0) == VAZIO)
             printf(".");
         if (obter_estado_casa(e,i,0) == BRANCA)
@@ -57,18 +60,79 @@ void mostrar_tabuleiro(ESTADO *e) {
         if (obter_estado_casa(e,i,0) == PRETA)
             printf("#");
     }
-    printf ("\n  ABCDEFGH");
 }
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
-    if(fgets(linha, BUF_SIZE, stdin) == NULL)
+
+    printf ("\n  ABCDEFGH\n");
+    printf ("# ");
+    printf ("%d ", obter_numero_de_comandos(e));
+    int j = obter_jogador_atual(e);
+    printf ("PL%d ",j);
+    printf ("(%d)> ",obter_numero_de_jogadas(e));
+
+    if(fgets(linha, BUF_SIZE, stdin) == NULL) {
         return 0;
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+    }
+
+    if(strlen(linha) == 3 && sscanf(linha, "%[a-h] %[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
-        jogar(e, coord);
+        coord.linha ++;
+        coord.coluna ++;
+        int fim = jogar(e, coord);
+        comando_q(e);
         mostrar_tabuleiro(e);
+        if (fim == 0){
+            printf("\nTerminar ");
+            return 0;
+        }
+        e->num_comando ++;
     }
     return 1;
+}
+
+void comando_q (ESTADO *e) {
+    FILE *fp;
+    fp = fopen("c:\\jogo.txt", "w");
+    int col = 6;
+    fprintf(fp, "8|");
+    for (int i = 0; i < 8; i++) {
+        if (obter_estado_casa(e,i,7) == VAZIO)
+            fprintf(fp, ".");
+        if (obter_estado_casa(e,i,7) == BRANCA)
+            fprintf(fp, "*");
+        if (obter_estado_casa(e,i,7) == PRETA)
+            fprintf(fp, "#");
+        if (obter_estado_casa(e,i,7) == DOIS)
+            fprintf(fp, "2");
+    }
+        fprintf(fp,"\n");
+        fprintf(fp, "7|");
+        for (int j = 6; j > 0; --j) {
+            for (int i = 0; i < 8; ++i) {
+                if (obter_estado_casa(e, i, j) == VAZIO)
+                    fprintf(fp, ".");
+                if (obter_estado_casa(e, i, j) == BRANCA)
+                    fprintf(fp, "*");
+                if (obter_estado_casa(e, i, j) == PRETA)
+                    fprintf(fp, "#");
+            }
+
+            fprintf(fp, "\n");
+            fprintf(fp, "%d", col--);
+            fprintf(fp, "|");
+        }
+        for (int i = 0; i < 8; i++) {
+            if (obter_estado_casa(e, i, 0) == UM)
+                fprintf(fp, "1");
+            if (obter_estado_casa(e, i, 0) == VAZIO)
+                fprintf(fp, ".");
+            if (obter_estado_casa(e, i, 0) == BRANCA)
+                fprintf(fp, "*");
+            if (obter_estado_casa(e, i, 0) == PRETA)
+                fprintf(fp, "#");
+        }
+        fclose(fp);
 }

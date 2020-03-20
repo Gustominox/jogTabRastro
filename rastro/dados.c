@@ -15,6 +15,9 @@ ESTADO *inicializar_estado() {
     e-> ultima_jogada.coluna = 5;
     e-> ultima_jogada.linha = 5;
     e->tab[4][4] = BRANCA;
+    e->tab[7][7] = DOIS;
+    e->tab[0][0] = UM;
+    e->num_comando = 0;
     return e;
 }
 
@@ -29,4 +32,8 @@ int obter_numero_de_jogadas(ESTADO *estado){
 CASA obter_estado_casa(ESTADO *e, int i, int j){
     CASA casa = e->tab[i] [j];
     return casa;
+}
+
+int obter_numero_de_comandos(ESTADO *e){
+    return e->num_comando;
 }

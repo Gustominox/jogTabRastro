@@ -11,6 +11,7 @@ CMakeFiles/rastro.dir/interface.c.o: ../logica.h
 
 CMakeFiles/rastro.dir/logica.c.o: ../dados.h
 CMakeFiles/rastro.dir/logica.c.o: ../logica.c
+CMakeFiles/rastro.dir/logica.c.o: ../logica.h
 
 CMakeFiles/rastro.dir/main.c.o: ../dados.h
 CMakeFiles/rastro.dir/main.c.o: ../interface.h

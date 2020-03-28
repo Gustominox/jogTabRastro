@@ -6,11 +6,6 @@
 
 int main()
 {
-    ESTADO *e = inicializar_estado();
-    COORDENADA c;
-    c.coluna = 6;
-    c.linha = 6;
-    jogar(e,c);
     /*
         Representaçao   Posicoes na
         Do Tabuleiro    Matriz
@@ -25,9 +20,19 @@ int main()
           ABCDEFGH        0|1|2|3|4|5|6|7|
      */
 
+    ESTADO *e = inicializar_estado();
+
+
     mostrar_tabuleiro(e);
-    int menu = 1;
-    while (menu == 1)
-    menu = interpretador(e);
+    int menu = 0;
+    while (menu == 0) {
+        menu = interpretador(e);
+        if (menu == 1) {
+            printf("Jogada Invalida");
+            menu = 0;
+        }
+    }
+    if (menu == 2) printf("\nTerminado o progama\n");
+    lista_movs(e);
     return 0;
 }

@@ -8,5 +8,5 @@
 #include "dados.h"
 
 int jogar(ESTADO *e, COORDENADA c);
-
+int jogada_invalida(ESTADO *e, COORDENADA jogada);
 #endif //RASTRO_LOGICA_H

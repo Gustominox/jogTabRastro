@@ -65,37 +65,65 @@ void mostrar_tabuleiro(ESTADO *e) {
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
-
+    int r = 0;
+    int j = obter_jogador_atual(e);
+    int fim;
+    //Prompt
     printf ("\n  ABCDEFGH\n");
     printf ("# ");
     printf ("%d ", obter_numero_de_comandos(e));
-    int j = obter_jogador_atual(e);
     printf ("PL%d ",j);
     printf ("(%d)> ",obter_numero_de_jogadas(e));
 
     if(fgets(linha, BUF_SIZE, stdin) == NULL) {
-        return 0;
+        return r;
     }
+
+    char comandos[3];
+    sscanf(linha ,"%s",&comandos);
 
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h] %[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         coord.linha ++;
         coord.coluna ++;
-        int fim = jogar(e, coord);
-        comando_q(e);
+        fim = jogar(e, coord);
+        if (fim == 1) return fim;
         mostrar_tabuleiro(e);
-        if (fim == 0){
-            printf("\nTerminar ");
-            return 0;
-        }
         e->num_comando ++;
-    }
-    return 1;
+    } else{
+        if (strcmp(comandos, "gr") == 0){
+            char nome[20];
+            printf("Nome do ficheiro: ");
+            scanf("%s", &nome);
+            comando_gr(e,nome);
+            char c;
+            while((c = getchar()) != '\n' && c != EOF)
+                /* apagar remains no stdin */ ;
+        }
+        if (strcmp(comandos, "q") == 0) r = comando_q(e);
+        if (strcmp(comandos, "ler") == 0) comando_ler(e);
+        }
+
+
+
+    if(fim == 2) r = 2;
+
+    return r;
 }
 
-void comando_q (ESTADO *e) {
+int comando_q(ESTADO *e){
+    return 2;
+}
+
+void comando_ler(ESTADO *e){
+
+
+}
+
+void comando_gr (ESTADO *e, char nome[]) {
     FILE *fp;
-    fp = fopen("c:\\jogo.txt", "w");
+    fp = fopen(nome, "w");
+    //Tabuleiro
     int col = 6;
     fprintf(fp, "8|");
     for (int i = 0; i < 8; i++) {
@@ -134,5 +162,40 @@ void comando_q (ESTADO *e) {
             if (obter_estado_casa(e, i, 0) == PRETA)
                 fprintf(fp, "#");
         }
+        fprintf(fp,"\n\n");
+        // Lista dos movimentos
+    int cont = 0;
+    for (int i = 0 ; i < e->num_comando; ++i) {
+        if (i % 2 == 0) {
+            int coluna_jog1 = e->jogadas[cont].jogador1.coluna;
+            int linha_jog1 = e->jogadas[cont].jogador1.linha;
+            if (cont < 10)
+                fprintf(fp ,"0%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
+            else fprintf(fp ,"%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
+        } else {
+            int coluna_jog2 = e->jogadas[cont].jogador2.coluna;
+            int linha_jog2 = e->jogadas[cont].jogador2.linha;
+            fprintf(fp ," %c%d\n", coluna_jog2+96, linha_jog2);
+            cont ++;
+        }
+    }
         fclose(fp);
+}
+
+void lista_movs(ESTADO *e){
+    int cont = 0;
+    for (int i = 0 ; i < e->num_comando; ++i) {
+        if (i % 2 == 0) {
+            int coluna_jog1 = e->jogadas[cont].jogador1.coluna;
+            int linha_jog1 = e->jogadas[cont].jogador1.linha;
+            if (cont < 10)
+                printf("0%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
+                else printf("%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
+        } else {
+            int coluna_jog2 = e->jogadas[cont].jogador2.coluna;
+            int linha_jog2 = e->jogadas[cont].jogador2.linha;
+            printf(" %c%d\n", coluna_jog2+96, linha_jog2);
+            cont ++;
+        }
+    }
 }

@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.c" "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/dados.c.o"
-  "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.c" "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/interface.c.o"
-  "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.c" "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/logica.c.o"
-  "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c" "/home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/main.c.o"
+  "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/dados.c" "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/cmake-build-debug/CMakeFiles/rastro.dir/dados.c.o"
+  "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/interface.c" "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/cmake-build-debug/CMakeFiles/rastro.dir/interface.c.o"
+  "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/logica.c" "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/cmake-build-debug/CMakeFiles/rastro.dir/logica.c.o"
+  "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/main.c" "/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/cmake-build-debug/CMakeFiles/rastro.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

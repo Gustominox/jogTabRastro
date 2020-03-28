@@ -6,11 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/dados.h
 
-/home/gusto/Desktop/li2/Li2Pl7g02/rastro/logica.c
-dados.h
-/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/interface.c
 stdio.h
 -
+string.h
+-
+interface.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/interface.h
+logica.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/logica.h
+dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/dados.h
+
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/interface.h
+dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/dados.h
+
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/logica.h
+dados.h
+/home/gusto/Desktop/li2/Li2Pl7g02/Li2Pl7g02-master/rastro/dados.h
 

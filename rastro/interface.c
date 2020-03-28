@@ -101,7 +101,16 @@ int interpretador(ESTADO *e) {
                 /* apagar remains no stdin */ ;
         }
         if (strcmp(comandos, "q") == 0) r = comando_q(e);
-        if (strcmp(comandos, "ler") == 0) comando_ler(e);
+        if (strcmp(comandos, "ler") == 0) {
+            char nome[20];
+            printf("Nome do ficheiro: ");
+            scanf("%s", &nome);
+            comando_ler(e,nome);
+            char c;
+            while((c = getchar()) != '\n' && c != EOF)
+                /* apagar remains no stdin */ ;
+        }
+        if (strcmp(comandos, "movs") == 0) comando_movs(e);
         }
 
 
@@ -115,11 +124,70 @@ int comando_q(ESTADO *e){
     return 2;
 }
 
-void comando_ler(ESTADO *e){
+void comando_ler(ESTADO *e, char nome[]){
+    FILE *fp;
+    fp=fopen(nome, "r");
+    char c[200] ;
+    char temp;
+    int cont = 0;
+    int n_comandos = 0;
+    int j = 0 , k = 7;
+    for (int i = 0; i < 200; ++i) {
+        temp = fgetc(fp);
+        if (temp == EOF) break;
+        if (i < 88) {
+            int mod = i % 11;
+            if (mod > 1){
+                if(j == 8) {
+                    j = 0;
+                    k--;
+                }
 
-
+                //printf("%d %d -",j,k);
+                if (temp == '.') e->tab[j][k] = VAZIO; //printf("%c",temp);
+                if (temp == '#') e->tab[j][k] = PRETA; //printf("%c",temp);
+                if (temp == '*') e->tab[j][k] = BRANCA; //printf("%c",temp);
+                if (temp == '1') e->tab[j][k] = UM; //printf("%c",temp);
+                if (temp == '2') e->tab[j][k] = DOIS; //printf("%c",temp);
+                //putchar('\n');
+                if (temp == '\n') j--;
+                j++;
+            }
+        } else if (i > 92) {
+            char temp2 = fgetc(fp);
+            COORDENADA c = transforma_jogada(temp, temp2);
+            e->jogadas[cont].jogador1.coluna = c.coluna;
+            e->jogadas[cont].jogador1.linha = c.linha;
+            e->jogador_atual = 2;
+            n_comandos ++;
+            e->num_comando = n_comandos;
+            temp = fgetc(fp);
+            if (temp == EOF) break;
+            temp = fgetc(fp);
+            temp2 = fgetc(fp);
+            c = transforma_jogada (temp,temp2);
+            e->jogadas[cont].jogador2.coluna = c.coluna;
+            e->jogadas[cont].jogador2.linha = c.linha;
+            e->jogador_atual = 1;
+            n_comandos ++;
+            cont ++;
+            e->num_comando = n_comandos;
+            e->num_jogadas = cont;
+            temp = fgetc(fp);
+            if (temp == EOF) break;
+            for (int l = 0; l < 4; ++l) fgetc(fp);
+        }
+    }
 }
 
+COORDENADA transforma_jogada(char x, char y){
+    int x1 = x - 96;
+    int y1 = y - 48;
+    COORDENADA c ;
+    c.coluna = x1;
+    c.linha = y1;
+    return c;
+}
 void comando_gr (ESTADO *e, char nome[]) {
     FILE *fp;
     fp = fopen(nome, "w");
@@ -182,7 +250,7 @@ void comando_gr (ESTADO *e, char nome[]) {
         fclose(fp);
 }
 
-void lista_movs(ESTADO *e){
+void comando_movs(ESTADO *e){
     int cont = 0;
     for (int i = 0 ; i < e->num_comando; ++i) {
         if (i % 2 == 0) {

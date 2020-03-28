@@ -33,6 +33,6 @@ int main()
         }
     }
     if (menu == 2) printf("\nTerminado o progama\n");
-    lista_movs(e);
+
     return 0;
 }

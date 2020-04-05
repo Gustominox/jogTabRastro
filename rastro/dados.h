@@ -1,6 +1,6 @@
 /**
 @file dados.h
-Definição do estado e das funções que o manipulam
+Definição do estado e das funções que o manipulam.
 */
 
 #ifndef ___DADOS_H___
@@ -53,7 +53,6 @@ typedef JOGADA JOGADAS[32];
 /**
 \brief Tipo de dados para o estado
 */
-
 typedef struct {
     /** O tabuleiro */
     CASA tab[8][8];
@@ -78,13 +77,13 @@ typedef struct {
 @param V O novo valor para a casa
 */
 void set_casa(ESTADO *e, COORDENADA c, CASA V);
+
 /**
 \brief Devolve o valor de uma casa
 @param e Apontador para o estado
 @param c A coordenada
 @returns O valor da casa
 */
-
 CASA obter_estado_casa(ESTADO *e, int i, int j);
 
 /**
@@ -93,10 +92,44 @@ Esta função inicializa o valor do estado. Isso implica o tabuleiro ser colocad
 @returns O novo estado
 */
 ESTADO *inicializar_estado();
+
+/**
+\brief Obtem o jogador atual.
+@returns 1 jogador atual, 2 jogador atual.
+*/
 int obter_jogador_atual(ESTADO *estado);
+
+/**
+\brief Obtem o número de jogadas.
+@return um inteiro.
+*/
 int obter_numero_de_jogadas(ESTADO *estado);
+
+/**
+\brief Obtem o número de comandos.
+@return um inteiro.
+*/
 int obter_numero_de_comandos(ESTADO *estado);
+
+/**
+\brief Muda o valor de uma celula de tab.
+@param e Apontador para o estado
+@param c A coordenada
+@param casa O novo valor para a celula
+*/
 void set_casa (ESTADO *e, COORDENADA c, CASA casa);
+
+/**
+\brief Muda o jogador
+@param e Apontador para o estado
+@param n O jogador
+*/
 void set_jogador_atual (ESTADO *e,int n);
+
+/**
+\brief Limpa o estado
+@param e Apontador para o estado
+*/
 void limpa_estado(ESTADO *e);
+
 #endif //RASTRO_DADOS_H

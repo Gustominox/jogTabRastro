@@ -23,7 +23,7 @@ int main()
     ESTADO *e = inicializar_estado();
 
 
-    mostrar_tabuleiro(e);
+    comando_gr(e,stdout);
     int menu = 0;
     while (menu == 0) {
         menu = interpretador(e);

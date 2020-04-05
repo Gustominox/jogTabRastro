@@ -28,11 +28,12 @@ int jogar(ESTADO *e, COORDENADA c) {
         e->jogadas[obter_numero_de_jogadas(e)].jogador1.coluna = c.coluna;
         e->jogadas[obter_numero_de_jogadas(e)].jogador1.linha = c.linha;
         e->jogador_atual = 2;
-    } else {
-        e->jogadas[obter_numero_de_jogadas(e)].jogador2.coluna = c.coluna;
-        e->jogadas[obter_numero_de_jogadas(e)].jogador2.linha = c.linha;
-        e->jogador_atual = 1;
         e->num_jogadas++;
+    } else {
+        e->jogadas[obter_numero_de_jogadas(e)-1].jogador2.coluna = c.coluna;
+        e->jogadas[obter_numero_de_jogadas(e)-1].jogador2.linha = c.linha;
+        e->jogador_atual = 1;
+
     }
 
     if (obter_estado_casa(e,0,0) == BRANCA){

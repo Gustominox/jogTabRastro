@@ -67,6 +67,8 @@ typedef struct {
     int num_comando;
     /** A coordenada da última jogada */
     COORDENADA ultima_jogada;
+    /** O nº de jogadas por jogador */
+    int num_jogagas_por_j;
 } ESTADO;
 
 /**
@@ -94,5 +96,7 @@ ESTADO *inicializar_estado();
 int obter_jogador_atual(ESTADO *estado);
 int obter_numero_de_jogadas(ESTADO *estado);
 int obter_numero_de_comandos(ESTADO *estado);
-
+void set_casa (ESTADO *e, COORDENADA c, CASA casa);
+void set_jogador_atual (ESTADO *e,int n);
+void limpa_estado(ESTADO *e);
 #endif //RASTRO_DADOS_H

@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include "dados.h"
+#include "interface.h"
 
 ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
@@ -29,9 +30,30 @@ int obter_numero_de_jogadas(ESTADO *estado){
     return estado->num_jogadas;
 }
 
+void set_casa (ESTADO *e, COORDENADA c, CASA casa){
+    e->tab[c.coluna-1][c.linha-1] = casa;
+}
+
 CASA obter_estado_casa(ESTADO *e, int i, int j){
     CASA casa = e->tab[i] [j];
     return casa;
+}
+void set_jogador_atual (ESTADO *e,int n){
+    e->jogador_atual = 1;
+}
+
+void limpa_estado(ESTADO *e){
+    e->jogador_atual = 1;
+    e->num_jogadas = 0;
+    for (int j = 0; j < 8; j++)
+        for (int i = 0; i < 8 ; i++)
+            e->tab [i][j] = VAZIO;
+    e-> ultima_jogada.coluna = 5;
+    e-> ultima_jogada.linha = 5;
+    e->tab[4][4] = BRANCA;
+    e->tab[7][7] = DOIS;
+    e->tab[0][0] = UM;
+    e->num_comando = 0;
 }
 
 int obter_numero_de_comandos(ESTADO *e){

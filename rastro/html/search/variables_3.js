@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ultima_5fjogada',['ultima_jogada',['../structESTADO.html#a4896a5c5c1f40b43fb795623327e3f47',1,'ESTADO']]]
+  ['num_5fcomando',['num_comando',['../structESTADO.html#adf1064dfc09145b6995a7897249f1674',1,'ESTADO']]],
+  ['num_5fjogadas',['num_jogadas',['../structESTADO.html#a261495728744647e618b4e623f5a4b7a',1,'ESTADO']]],
+  ['num_5fjogagas_5fpor_5fj',['num_jogagas_por_j',['../structESTADO.html#a3723f750e03d043ff72cececc0c3c391',1,'ESTADO']]]
 ];

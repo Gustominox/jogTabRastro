@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['num_5fcomando',['num_comando',['../structESTADO.html#adf1064dfc09145b6995a7897249f1674',1,'ESTADO']]],
-  ['num_5fjogadas',['num_jogadas',['../structESTADO.html#a261495728744647e618b4e623f5a4b7a',1,'ESTADO']]]
+  ['limpa_5festado',['limpa_estado',['../dados_8c.html#a51c7c5948deef8c8ddd1a3e3c768ddb2',1,'limpa_estado(ESTADO *e):&#160;dados.c'],['../dados_8h.html#a51c7c5948deef8c8ddd1a3e3c768ddb2',1,'limpa_estado(ESTADO *e):&#160;dados.c']]],
+  ['linha',['linha',['../structCOORDENADA.html#aefe14bcc5a066ac3b21500cc3d28c06f',1,'COORDENADA']]],
+  ['logica_2ec',['logica.c',['../logica_8c.html',1,'']]],
+  ['logica_2eh',['logica.h',['../logica_8h.html',1,'']]]
 ];

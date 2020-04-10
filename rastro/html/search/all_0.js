@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['casa',['CASA',['../dados_8h.html#aba91601f16d4c485b2d9b8c429f27039',1,'dados.h']]],
-  ['coordenada',['COORDENADA',['../structCOORDENADA.html',1,'']]]
+  ['branca',['BRANCA',['../dados_8h.html#aba91601f16d4c485b2d9b8c429f27039ad24485fddec75419fd4a0cc9edda0ca5',1,'dados.h']]],
+  ['buf_5fsize',['BUF_SIZE',['../dados_8h.html#a6821bafc3c88dfb2e433a095df9940c6',1,'BUF_SIZE():&#160;dados.h'],['../interface_8c.html#a6821bafc3c88dfb2e433a095df9940c6',1,'BUF_SIZE():&#160;interface.c']]]
 ];

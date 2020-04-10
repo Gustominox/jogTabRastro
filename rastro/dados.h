@@ -71,10 +71,10 @@ typedef struct {
 } ESTADO;
 
 /**
-\brief Muda o valor de uma casa
+\brief Muda o valor de uma celula de tab.
 @param e Apontador para o estado
 @param c A coordenada
-@param V O novo valor para a casa
+@param casa O novo valor para a celula.
 */
 void set_casa(ESTADO *e, COORDENADA c, CASA V);
 
@@ -87,7 +87,7 @@ void set_casa(ESTADO *e, COORDENADA c, CASA V);
 CASA obter_estado_casa(ESTADO *e, int i, int j);
 
 /**
-\brief Inicializa o valor do estado
+\brief Inicializa o valor do estado \n
 Esta função inicializa o valor do estado. Isso implica o tabuleiro ser colocado na posição inicial e todos os campos do estado estarem com o valor por omissão.
 @returns O novo estado
 */

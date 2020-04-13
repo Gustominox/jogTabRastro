@@ -7,6 +7,7 @@ Definição do estado e das funções que o manipulam.
 #define  ___DADOS_H___
 #define BUF_SIZE 1024
 
+#include "dados.h"
 /**
 \brief Tipo de dados para os erros
 */
@@ -36,6 +37,18 @@ typedef struct {
     int coluna;
     int linha;
 } COORDENADA;
+
+typedef struct nodo * rede[8];
+/**
+ *
+ */
+
+typedef struct nodo{
+    COORDENADA inicial;
+    COORDENADA final;
+    double peso;
+    rede nodos;
+}nodo;
 
 /**
 \brief Tipo de dados para a jogada
@@ -132,4 +145,8 @@ void set_jogador_atual (ESTADO *e,int n);
 */
 void limpa_estado(ESTADO *e);
 
+COORDENADA criar_coordenada(int col, int lin);
+nodo *init_nodo (nodo *nodol,COORDENADA final, COORDENADA inicial, double peso);
+double calcular_peso_nodo(COORDENADA i, COORDENADA f);
+void criar_rede (nodo *nodol);
 #endif //RASTRO_DADOS_H

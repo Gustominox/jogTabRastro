@@ -3,9 +3,9 @@
 #include "interface.h"
 #include "logica.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+#include "listas.h"
 int main(){
-
     /**
 @mainpage Projeto Li2
 
@@ -50,8 +50,9 @@ Pequena introducao
 
      */
 
-    ESTADO *e = inicializar_estado();
 
+     ESTADO *e = inicializar_estado();
+    /*
     comando_gr(e,stdout);
     int menu = 0;
     while (menu == 0) {
@@ -62,6 +63,23 @@ Pequena introducao
         }
     }
     if (menu == 2) printf("\nTerminado o progama\n");
-
+*/
+    /*nodo *atual;
+    COORDENADA c = {3,2};
+    atual = init_nodo(atual,e->ultima_jogada,c,5.0);
+    criar_rede (atual);*/
+    LISTA l = criar_lista();
+    LISTA l2;
+    l = insere_cabeca(l,1);
+    l = insere_cabeca(l,2);
+    l2 = proximo(l);
+    //l2 = insere_cabeca(proximo(l),2);
+    l = remove_cabeca(l);
+    l = remove_cabeca(l);
+    int r = lista_esta_vazia(l);
+    if (r == 0 ) printf("lista vazia\n");
+    else printf("lista nao vazia\n");
+    //printf("%d\n",r);
     return 0;
 }
+

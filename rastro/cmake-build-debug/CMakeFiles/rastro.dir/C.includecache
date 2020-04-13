@@ -13,32 +13,16 @@ dados.h
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.h
 interface.h
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.h
+math.h
+-
 
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.h
-
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.c
-stdio.h
--
-string.h
--
-interface.h
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.h
-logica.h
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.h
 dados.h
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.h
 
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.h
 dados.h
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.h
-stdio.h
--
-
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.c
-dados.h
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.h
-logica.h
-/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.h
 stdio.h
 -
 
@@ -54,5 +38,7 @@ interface.h
 logica.h
 /home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.h
 stdio.h
+-
+stdlib.h
 -
 

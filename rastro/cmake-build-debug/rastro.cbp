@@ -90,6 +90,12 @@
 		<Unit filename="/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.h">
 			<Option target="rastro"/>
 		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/listas.c">
+			<Option target="rastro"/>
+		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/listas.h">
+			<Option target="rastro"/>
+		</Unit>
 		<Unit filename="/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.c">
 			<Option target="rastro"/>
 		</Unit>

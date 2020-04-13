@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/dados.c" "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/dados.c.o"
   "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/interface.c" "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/interface.c.o"
+  "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/listas.c" "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/listas.c.o"
   "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/logica.c" "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/logica.c.o"
   "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/main.c" "/home/gusto/Desktop/li2/2checkout/Li2Pl7g02/rastro/cmake-build-debug/CMakeFiles/rastro.dir/main.c.o"
   )

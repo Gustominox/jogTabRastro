@@ -23,43 +23,42 @@ Para ser colocada cada letra que por baixo da sua coluna foi usado um printf de 
 por baixo da primeira coluna e por aí adiante.
 */
 
+void prompt (ESTADO *e){
+    printf ("\n# ");
+    printf ("%d ", obter_numero_de_comandos(e));
+    printf ("PL%d ",obter_jogador_atual(e));
+    printf ("(%d)> ",obter_numero_de_jogadas(e));
+}
+
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
     int r = 0;
-    int j = obter_jogador_atual(e);
-    int fim;
-    //Prompt
-    printf ("\n# ");
-    printf ("%d ", obter_numero_de_comandos(e));
-    printf ("PL%d ",j);
-    printf ("(%d)> ",obter_numero_de_jogadas(e));
+    char nome[20];
+    char comandos[4];
+
+    prompt(e);
 
     if(fgets(linha, BUF_SIZE, stdin) == NULL) {
         return r;
     }
 
-    char nome[20];
-    char comandos[4];
-    sscanf(linha ,"%s %s",&comandos,&nome);
-
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h] %[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         coord.linha ++;
         coord.coluna ++;
-        fim = jogar(e, coord);
-        if (fim == 1) return fim;
+        r = jogar(e, coord);
+        if (r == 1) return r;
         e->num_comando ++;
         e->num_jogagas_por_j ++;
         comando_gr(e,stdout);
     } else {
+        sscanf(linha ,"%s %s",&comandos,&nome);
+
         if (strcmp(comandos, "gr") == 0) {
             FILE *fp = fopen(nome, "w");
             comando_gr(e, fp);
             fclose(fp);
-            //char c;
-            //while((c = getchar()) != '\n' && c != EOF)
-            //   /* apagar remains no stdin */ ;
             e->num_comando++;
         }
         if (strcmp(comandos, "q") == 0) {
@@ -75,13 +74,12 @@ int interpretador(ESTADO *e) {
             e->num_comando++;
         }
         if (strcmp(comandos, "pos") == 0) {
-            int n = nome[0] - 48;
+            int n;
+            sscanf(nome,"%d",&n);
             comando_pos(e,n);
             e->num_comando++;
         }
     }
-
-    if(fim == 2) r = 2;
 
     return r;
 }
@@ -109,7 +107,7 @@ void comando_pos (ESTADO *e, int n){
         coord.linha = 5;
         if (n != 0)
             set_casa(e, coord, PRETA);
-    } else printf("Impossível executar pos %d", n);
+    } else printf("Impossível executar pos %d\n", n);
     comando_gr(e,stdout);
 }
 
@@ -124,27 +122,27 @@ void comando_ler(ESTADO *e, char nome[]){
     int cont = 0;
     int n_jogadas_p_jog = 0;
     int j = 0 , k = 7;
-    for (int i = 0; i < 300; ++i) {
+    for (int i = 0; i < BUF_SIZE; ++i) {
         temp = fgetc(fp);
         if (temp == EOF) break;
         if (i < 72) {
-                if(j == 8) {
-                    j = 0;
-                    k--;
-                }
-                if (temp == '.') e->tab[j][k] = VAZIO;
-                if (temp == '#') e->tab[j][k] = PRETA;
-                if (temp == '*') e->tab[j][k] = BRANCA;
-                if (temp == '1') e->tab[j][k] = UM;
-                if (temp == '2') e->tab[j][k] = DOIS;
-                if (temp == '\n')j--;
-                j++;
+            if(j == 8) {
+                j = 0;
+                k--;
+            }
+            if (temp == '.') e->tab[j][k] = VAZIO;
+            if (temp == '#') e->tab[j][k] = PRETA;
+            if (temp == '*') e->tab[j][k] = BRANCA;
+            if (temp == '1') e->tab[j][k] = UM;
+            if (temp == '2') e->tab[j][k] = DOIS;
+            if (temp == '\n')j--;
+            j++;
 
         } else if (i > 72) {
             for (int l = 0; l < 3; ++l) fgetc(fp);
             char temp = fgetc(fp);
             char temp2 = fgetc(fp);
-            //printf("%c %c ",temp,temp2);
+
             COORDENADA c = transforma_jogada(temp, temp2);
             e->jogadas[cont].jogador1.coluna = c.coluna;
             e->jogadas[cont].jogador1.linha = c.linha;
@@ -158,7 +156,7 @@ void comando_ler(ESTADO *e, char nome[]){
             if (temp == EOF) break;
             temp = fgetc(fp);
             temp2 = fgetc(fp);
-            //printf(" %c %c ",temp,temp2);
+
             c = transforma_jogada (temp,temp2);
             e->jogadas[cont-1].jogador2.coluna = c.coluna;
             e->jogadas[cont-1].jogador2.linha = c.linha;
@@ -173,16 +171,29 @@ void comando_ler(ESTADO *e, char nome[]){
     comando_gr(e,stdout);
 }
 
-COORDENADA transforma_jogada(char x, char y){
-    int x1 = x - 96;
-    int y1 = y - 48;
-    COORDENADA c ;
-    c.coluna = x1;
-    c.linha = y1;
+COORDENADA transforma_jogada(char col, char lin){
+    COORDENADA c = {col - 96, lin - 48};
     return c;
+
 }
+
 void comando_gr (ESTADO *e, FILE *fp) {
-    //Tabuleiro
+/**
+Imprimir Tabuleiro
+
+    comando_tab(e,fp);
+*/
+    comando_tab(e,fp);
+/**
+Imprimir Movimentos
+
+    comando_movs(e,fp);
+*/
+    comando_movs(e,fp);
+
+}
+
+void comando_tab(ESTADO *e, FILE *fp){
     int col = 6;
     if(fp == stdout) printf( "8|");
     for (int i = 0; i < 8; i++) {
@@ -195,46 +206,43 @@ void comando_gr (ESTADO *e, FILE *fp) {
         if (obter_estado_casa(e,i,7) == DOIS)
             fprintf(fp, "2");
     }
-        fprintf(fp,"\n");
+    fprintf(fp,"\n");
     if(fp == stdout) printf( "7|");
-        for (int j = 6; j > 0; --j) {
-            for (int i = 0; i < 8; ++i) {
-                if (obter_estado_casa(e, i, j) == VAZIO)
-                    fprintf(fp, ".");
-                if (obter_estado_casa(e, i, j) == BRANCA)
-                    fprintf(fp, "*");
-                if (obter_estado_casa(e, i, j) == PRETA)
-                    fprintf(fp, "#");
-            }
-
-            fprintf(fp, "\n");
-            if(fp == stdout) printf( "%d", col--);
-            if(fp == stdout) printf( "|");
-        }
-        for (int i = 0; i < 8; i++) {
-            if (obter_estado_casa(e, i, 0) == UM)
-                fprintf(fp, "1");
-            if (obter_estado_casa(e, i, 0) == VAZIO)
+    for (int j = 6; j > 0; --j) {
+        for (int i = 0; i < 8; ++i) {
+            if (obter_estado_casa(e, i, j) == VAZIO)
                 fprintf(fp, ".");
-            if (obter_estado_casa(e, i, 0) == BRANCA)
+            if (obter_estado_casa(e, i, j) == BRANCA)
                 fprintf(fp, "*");
-            if (obter_estado_casa(e, i, 0) == PRETA)
+            if (obter_estado_casa(e, i, j) == PRETA)
                 fprintf(fp, "#");
         }
-        fprintf(fp,"\n\n");
-    if(fp == stdout) printf ("  ABCDEFGH\n");
-    comando_movs(e,fp);
 
+        fprintf(fp, "\n");
+        if(fp == stdout) printf( "%d", col--);
+        if(fp == stdout) printf( "|");
+    }
+    for (int i = 0; i < 8; i++) {
+        if (obter_estado_casa(e, i, 0) == UM)
+            fprintf(fp, "1");
+        if (obter_estado_casa(e, i, 0) == VAZIO)
+            fprintf(fp, ".");
+        if (obter_estado_casa(e, i, 0) == BRANCA)
+            fprintf(fp, "*");
+        if (obter_estado_casa(e, i, 0) == PRETA)
+            fprintf(fp, "#");
+    }
+    fprintf(fp,"\n\n");
+    if(fp == stdout) printf ("  ABCDEFGH\n");
 }
 
 void comando_movs(ESTADO *e,FILE *fp){
-    // Lista dos movimentos
     int cont = 0;
     for (int i = 0 ; i < e->num_jogagas_por_j; ++i) {
         if (i % 2 == 0) {
             int coluna_jog1 = e->jogadas[cont].jogador1.coluna;
             int linha_jog1 = e->jogadas[cont].jogador1.linha;
-            if (cont < 10)
+            if (cont < 9)
                 fprintf(fp ,"0%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
             else fprintf(fp ,"%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
         } else {

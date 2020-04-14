@@ -3,6 +3,8 @@
 //
 #include "listas.h"
 #include "stdlib.h"
+#include "stdio.h"
+
 LISTA criar_lista(){
     LISTA l;
     l.cabeca = NULL;
@@ -40,4 +42,11 @@ int lista_esta_vazia(LISTA l){
     if(l.prox == NULL) r = 0;
     else r = 1 + lista_esta_vazia(*l.prox);
     return r;
+}
+
+void ler_lista_double(LISTA l){
+    if (l.prox != NULL){
+        printf("%d",l.cabeca);
+        ler_lista_double(*l.prox);
+    } //else printf("%d",l.cabeca);
 }

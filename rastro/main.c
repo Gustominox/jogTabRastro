@@ -64,22 +64,19 @@ Pequena introducao
     }
     if (menu == 2) printf("\nTerminado o progama\n");
 */
-    /*nodo *atual;
-    COORDENADA c = {3,2};
-    atual = init_nodo(atual,e->ultima_jogada,c,5.0);
-    criar_rede (atual);*/
-    LISTA l = criar_lista();
-    LISTA l2;
-    l = insere_cabeca(l,1);
-    l = insere_cabeca(l,2);
-    l2 = proximo(l);
-    //l2 = insere_cabeca(proximo(l),2);
-    l = remove_cabeca(l);
-    l = remove_cabeca(l);
-    int r = lista_esta_vazia(l);
-    if (r == 0 ) printf("lista vazia\n");
-    else printf("lista nao vazia\n");
-    //printf("%d\n",r);
+    //l = criar_lista();
+    nodo *atual;
+    COORDENADA c = {1,1};
+    //atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
+    atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
+    iguala_tab(e);
+    //printf("%d\n",caminh[4][4]);
+
+    criar_rede (atual,e);
+    //menor_peso(atual->nodos);
+    //insere_cabeca(l,2);
+    //percorrer_rede(atual,l);
+    //ler_lista_double(l);
     return 0;
 }
 

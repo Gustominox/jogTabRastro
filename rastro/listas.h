@@ -20,4 +20,8 @@ LISTA proximo(LISTA L);
 LISTA remove_cabeca(LISTA L);
 // Devolve verdareiro se a lista é vazia|| Devolve 0 se é vazia, maior que 0 se não é
 int lista_esta_vazia(LISTA L);
+// le os valores da lista
+void ler_lista_double(LISTA L);
+
+LISTA l;
 #endif //RASTRO_LISTAS_H

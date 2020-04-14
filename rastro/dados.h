@@ -8,6 +8,8 @@ Definição do estado e das funções que o manipulam.
 #define BUF_SIZE 1024
 
 #include "dados.h"
+#include "listas.h"
+
 /**
 \brief Tipo de dados para os erros
 */
@@ -30,6 +32,11 @@ typedef enum {
     PRETA = '#'
 } CASA;
 
+typedef enum {
+    FALSE,
+    TRUE
+}BOOL;
+BOOL caminh[8][8];
 /**
 \brief Tipo de dados para as coordenadas
 */
@@ -148,5 +155,8 @@ void limpa_estado(ESTADO *e);
 COORDENADA criar_coordenada(int col, int lin);
 nodo *init_nodo (nodo *nodol,COORDENADA final, COORDENADA inicial, double peso);
 double calcular_peso_nodo(COORDENADA i, COORDENADA f);
-void criar_rede (nodo *nodol);
+void criar_rede (nodo *nodol,ESTADO *e);
+nodo *menor_peso(nodo *rede[],int k);
+nodo *percorrer_rede(nodo *nodol,LISTA l);
+void iguala_tab(ESTADO *e);
 #endif //RASTRO_DADOS_H

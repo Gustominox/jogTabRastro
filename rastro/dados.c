@@ -6,6 +6,7 @@ Construção do código correspondente às funções que dizem respeito ao estad
 #include <stdlib.h>
 #include "dados.h"
 #include "interface.h"
+#include "listas.h"
 #include <math.h>
 ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
@@ -16,14 +17,14 @@ ESTADO *inicializar_estado() {
             e->tab [i][j] = VAZIO;
     e-> ultima_jogada.coluna = 5;
     e-> ultima_jogada.linha = 5;
-    e->tab[4][4] = BRANCA;
+    e->tab[4][4] = PRETA;
     e->tab[7][7] = DOIS;
     e->tab[0][0] = UM;
     e->num_comando = 0;
     return e;
 }
 
-/**
+/**e->tab[][] == PRETA
 \brief Obtem o jogador atual.
 @returns 1 jogador atual, 2 jogador atual.
 */
@@ -94,15 +95,15 @@ COORDENADA criar_coordenada(int col, int lin){
 nodo *init_nodo (nodo *nodol,COORDENADA inicial, COORDENADA final, double peso){
     nodol->final = final;
     nodol->inicial = inicial;
-    if (peso != -1) {
-        nodol->peso = peso;
-        for (int i = 0; i < 8 ; i++)
-            nodol->nodos[i] = malloc(sizeof(nodo));
-    }else {
-        nodol->peso = -1;
-        for (int i = 0; i < 8 ; i++)
-            nodol->nodos[i] = NULL;
-    }
+    //if (peso != -1) {
+    nodol->peso = peso;
+    for (int i = 0; i < 8 ; i++)
+        nodol->nodos[i] = malloc(sizeof(nodo));
+    //}//else {
+     //   nodol->peso = -1;
+     //   for (int i = 0; i < 8 ; i++)
+      //      nodol->nodos[i] = NULL;
+    //}
     }
 
 double calcular_peso_nodo(COORDENADA i, COORDENADA f){
@@ -115,30 +116,90 @@ double calcular_peso_nodo(COORDENADA i, COORDENADA f){
     return dist;
 }
 
-void criar_rede (nodo *nodol) {
+
+
+void criar_rede (nodo *nodol,ESTADO *e) {
+
     COORDENADA c = nodol->final;
-    //64*63/2 = 2016
-    /*
-    COORDENADA tdsNodos[2016];
-    int coordPtr = 0;
-    tdsNodos[coordPtr] = c;
-    coordPtr ++;
-    */
+    caminh [c.coluna-1][c.linha-1] = TRUE;
+    //printf("%d\n",caminh [c.coluna-1][c.linha-1]);
+
     int k = 0;
     for (int i = c.coluna - 1; i < c.coluna + 2; i++) {
             for (int j = c.linha - 1; j < c.linha + 2; ++j) {
                 COORDENADA coord1 = {i,j};
-                if ((j > 0 && j < 9) && (i > 0 && i < 9) && (i != c.coluna || j != c.linha)) {
-                    COORDENADA coord2 = {7,7};
-                    printf("de %d %d para %d %d: ",c.coluna,c.linha, i, j);
+                if ((j > 0 && j < 9) && (i > 0 && i < 9) && (caminh[i-1][j-1] == FALSE) && (i != c.coluna || j != c.linha)) {
+                    COORDENADA coord2 = {8,8};
+                    //if(i == c.coluna && j == c.linha)
+                    //printf("%d\n",caminh [c.coluna-1][c.linha-1]);
+                    printf("%d: de %d %d para %d %d: ",k,c.coluna,c.linha, i, j);
                     init_nodo(nodol->nodos[k],c,coord1,calcular_peso_nodo(coord1,coord2));
                     printf("%lf\n",nodol->nodos[k]->peso);
-                    //criar_rede(nodol->nodos[k]);
-                    //criar_rede(init_nodo(nodol->nodos[k],coord1,calcular_peso_nodo(coord1,coord2)));
+                    k++;
                 } else{
-                    init_nodo(nodol->nodos[k],c,coord1,-1);
+                    init_nodo(nodol->nodos[k],c,coord1,-1.0);
+                    printf("%d: de %d %d para %d %d: ",k,c.coluna,c.linha, i, j);
+                    printf("%lf\n",nodol->nodos[k]->peso);
+
+                    //printf("estou vivo\n");
+                    k++;
+                    if (caminh[i-1][j-1] == TRUE)
+                        k--;
                 }
             }
-        k++;
+    }
+    nodo *nodog = menor_peso(nodol->nodos,k);
+    //k = 0;
+    if( nodog->peso != 0.0 ){
+        printf("nodo escolhido: %d %d\n",nodog->final.coluna,nodog->final.linha);
+        criar_rede(nodog,e);
+    } else printf("fim\n");
+}
+
+nodo *menor_peso(nodo *rede[],int k) {
+    int nodo = 0;
+    while(rede[nodo]->peso == -1.0) {
+            nodo += 1;
+    }
+
+    //printf("%d %lf",nodo ,rede[nodo]->peso);
+    for (int i = 1; i < k; i++) {
+        if (rede[i]->peso != -1.0) {//rede[i]!=NULL &&
+            if (rede[nodo]->peso > rede[i]->peso) nodo = i;
+            //printf("%d\n",nodo);
+            //printf("%d: %lf\n",nodo,rede[nodo]->peso);
+        }
+    }
+    /*
+    if (rede[nodo]->peso == 0){
+
+        return NULL;
+    }else{
+        //printf("%lf\n",rede[nodo]->peso);
+*/
+    return rede[nodo];
+   // }
+}
+
+nodo *percorrer_rede(nodo *nodol,LISTA l){
+    //if (.prox != NULL){
+    //printf("%d",l.cabeca);
+    //insere_cabeca(l,&nodol->peso);
+    nodo *proxNodo  = menor_peso(nodol->nodos,0);
+    if (proxNodo == NULL){
+        printf("%f\n",0);//proxNodo->peso);
+        return proxNodo;
+    }else {
+        printf("%d %d :%f\n",proxNodo->final.coluna,proxNodo->final.linha,proxNodo->peso);
+        return percorrer_rede(proxNodo,l);
+    }
+}// else printf("%d",l.cabeca);
+
+void iguala_tab(ESTADO *e){
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            if(e->tab[i][j] == PRETA)
+                caminh[i][j] = TRUE;
+        }
     }
 }

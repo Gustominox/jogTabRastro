@@ -171,11 +171,6 @@ void comando_ler(ESTADO *e, char nome[]){
     comando_gr(e,stdout);
 }
 
-COORDENADA transforma_jogada(char col, char lin){
-    COORDENADA c = {col - 96, lin - 48};
-    return c;
-
-}
 
 void comando_gr (ESTADO *e, FILE *fp) {
 /**

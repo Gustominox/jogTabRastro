@@ -3,7 +3,7 @@
 Definição do estado e das funções que o manipulam.
 */
 
-#ifndef ___DADOS_H___
+#ifndef ___DADOS_H___//
 #define  ___DADOS_H___
 #define BUF_SIZE 1024
 
@@ -108,7 +108,20 @@ CASA obter_estado_casa(ESTADO *e, int i, int j);
 
 /**
 \brief Inicializa o valor do estado \n
-Esta função inicializa o valor do estado. Isso implica o tabuleiro ser colocado na posição inicial e todos os campos do estado estarem com o valor por omissão.
+Esta função inicializa o valor do estado.
+Isso implica o tabuleiro ser colocado na posição inicial e todos os campos do estado estarem com o valor por omissão.
+
+Alocação da memória para o estado
+O jogador atual a 1
+O número de jogadas a 0
+O número de jogadas por jogador a 0
+A colocação da peça VAZIA em todas as casas
+A posição da última jogada a coluna 5 e linha 5
+Na casa (4,4), está uma peça BRANCA
+Na casa (7,7), está uma peça DOIS
+Na casa (0,0), está uma peça UM
+O número de comandos a 0
+
 @returns O novo estado
 */
 ESTADO *inicializar_estado();
@@ -152,11 +165,15 @@ void set_jogador_atual (ESTADO *e,int n);
 */
 void limpa_estado(ESTADO *e);
 
+
+
 COORDENADA criar_coordenada(int col, int lin);
+COORDENADA transforma_jogada(char x, char y);
 nodo *init_nodo (nodo *nodol,COORDENADA final, COORDENADA inicial, double peso);
 double calcular_peso_nodo(COORDENADA i, COORDENADA f);
 void criar_rede (nodo *nodol,ESTADO *e);
 nodo *menor_peso(nodo *rede[],int k);
-nodo *percorrer_rede(nodo *nodol,LISTA l);
+//nodo *percorrer_rede(nodo *nodol,LISTA l);
 void iguala_tab(ESTADO *e);
+
 #endif //RASTRO_DADOS_H

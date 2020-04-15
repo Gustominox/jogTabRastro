@@ -4,5 +4,5 @@
 -Grupo 02  
 ### Membros:
 Augusto César Oliveira Campos a93320<br/>
-Ana Paula Oliveira Henriques a93268  
-Paulo Ricardo Santos Pereira a93245  
+Ana Paula Oliveira Henriques a93268<br/>
+Paulo Ricardo Santos Pereira a93245<br/>

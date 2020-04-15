@@ -19,6 +19,6 @@ void comando_movs(ESTADO *e,FILE *fp);
 void comando_tab(ESTADO *e, FILE *fp);
 int comando_q(ESTADO *e);
 void comando_ler(ESTADO *e, char nome[]);
-COORDENADA transforma_jogada(char x, char y);
+
 void comando_pos (ESTADO *e, int n);
 #endif //RASTRO_INTERFACE_H

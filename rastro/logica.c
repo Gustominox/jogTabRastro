@@ -36,18 +36,36 @@ int jogar(ESTADO *e, COORDENADA c) {
         e->jogador_atual = 1;
     }
     /** Se a peça branca acabar na casa (0,0), ganha o jogador 1 */
-    if (obter_estado_casa(e,0,0) == BRANCA){
-        printf ("Venceu o jogador 1.\n");
-        return 2;
-    }
-    /** Se acabar na casa (7,7), ganha o jogador 2 */
-    if (obter_estado_casa(e,7,7) == BRANCA) {
-        printf ("Venceu o jogador 2.\n");
-        return 2;
-    }
-    return 0;
+     r = jogo_terminado(e);
+    return r;
 }
+int jogo_terminado(ESTADO *e){
+    int x = e->ultima_jogada.coluna-1;
+    int y = e->ultima_jogada.linha-1;
 
+    if (obter_estado_casa(e,0,0) == BRANCA) return 2;
+
+    /** Se acabar na casa (7,7), ganha o jogador 2 */
+    if (obter_estado_casa(e,7,7) == BRANCA) return 3;
+
+    int flag = 0;
+    for (int i = x - 1; i < x + 2; i++)
+            for (int j = y - 1; j < y + 2; j++){
+                printf("%d\n",obter_estado_casa(e,i,j));
+                if((obter_estado_casa(e,i,j) != PRETA) && (i != x && j != y) ){
+                    //printf("%d\n",obter_estado_casa(e,i,j));
+                    flag = 1;
+                }
+            }
+    printf("flag:%d\n",flag);
+    if (flag == 0){
+        if (obter_jogador_atual(e) == 1) return 2;
+        if (obter_jogador_atual(e) == 2) return 3;
+    }
+
+    return 0;
+
+}
 
 int jogada_invalida(ESTADO *e, COORDENADA jogada) {
     int r = 1;

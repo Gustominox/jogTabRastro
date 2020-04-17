@@ -32,5 +32,5 @@ int jogar(ESTADO *e, COORDENADA c);
 > \n **1** se a jogada **invalida**,
 */
 int jogada_invalida(ESTADO *e, COORDENADA jogada);
-
+int jogo_terminado(ESTADO *e);
 #endif //RASTRO_LOGICA_H

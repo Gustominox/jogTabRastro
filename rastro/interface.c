@@ -131,7 +131,10 @@ void comando_ler(ESTADO *e, char nome[]){
                 k--;
             }
             if (temp == '.') e->tab[j][k] = VAZIO;
-            if (temp == '#') e->tab[j][k] = PRETA;
+            if (temp == '#'){
+                e->tab[j][k] = PRETA;
+                n_jogadas_p_jog++;
+            }
             if (temp == '*') e->tab[j][k] = BRANCA;
             if (temp == '1') e->tab[j][k] = UM;
             if (temp == '2') e->tab[j][k] = DOIS;
@@ -148,7 +151,6 @@ void comando_ler(ESTADO *e, char nome[]){
             e->jogadas[cont].jogador1.linha = c.linha;
             e->jogador_atual = 2;
             e->ultima_jogada = c;
-            n_jogadas_p_jog ++;
             e->num_jogagas_por_j = n_jogadas_p_jog;
             cont ++;
             e->num_jogadas = cont;
@@ -162,11 +164,10 @@ void comando_ler(ESTADO *e, char nome[]){
             e->jogadas[cont-1].jogador2.linha = c.linha;
             e->jogador_atual = 1;
             e->ultima_jogada = c;
-            n_jogadas_p_jog ++;
-            e->num_jogagas_por_j = n_jogadas_p_jog;
             temp = fgetc(fp);
             if (temp == EOF) break;
         }
+        e->num_jogagas_por_j = n_jogadas_p_jog;
     }
     comando_gr(e,stdout);
 }
@@ -247,4 +248,5 @@ void comando_movs(ESTADO *e,FILE *fp){
             cont ++;
         }
     }
+    printf("\n%d %d %d %d\n",e->num_jogagas_por_j,e->jogador_atual,e->num_comando,e->num_jogadas);
 }

@@ -52,7 +52,7 @@ Pequena introducao
 
 
      ESTADO *e = inicializar_estado();
-    /*
+
     comando_gr(e,stdout);
     int menu = 0;
     while (menu == 0) {
@@ -62,8 +62,11 @@ Pequena introducao
             menu = 0;
         }
     }
-    if (menu == 2) printf("\nTerminado o progama\n");
-*/
+    if (menu == 2) printf ("\nVenceu o jogador 1.\n");
+    if (menu == 3) printf ("\nVenceu o jogador 2.\n");
+    printf("\nTerminado o progama\n");
+
+    /*
     //l = criar_lista();
     nodo *atual;
     COORDENADA c = {1,1};
@@ -77,6 +80,7 @@ Pequena introducao
     //insere_cabeca(l,2);
     //percorrer_rede(atual,l);
     //ler_lista_double(l);
+    */
     return 0;
 }
 

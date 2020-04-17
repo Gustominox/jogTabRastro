@@ -18,7 +18,7 @@ ESTADO *inicializar_estado() {
             e->tab [i][j] = VAZIO;
     e-> ultima_jogada.coluna = 5;
     e-> ultima_jogada.linha = 5;
-    e->tab[4][4] = PRETA;
+    e->tab[4][4] = BRANCA;
     e->tab[7][7] = DOIS;
     e->tab[0][0] = UM;
     e->num_comando = 0;
@@ -163,20 +163,5 @@ void iguala_tab(ESTADO *e){
     }
 }
 
-/*
-nodo *percorrer_rede(nodo *nodol,LISTA l){
-    //if (.prox != NULL){
-    //printf("%d",l.cabeca);
-    //insere_cabeca(l,&nodol->peso);
-    nodo *proxNodo  = menor_peso(nodol->nodos,0);
-    if (proxNodo == NULL){
-        printf("%f\n",0);//proxNodo->peso);
-        return proxNodo;
-    }else {
-        printf("%d %d :%f\n",proxNodo->final.coluna,proxNodo->final.linha,proxNodo->peso);
-        return percorrer_rede(proxNodo,l);
-    }
-}// else printf("%d",l.cabeca);
-*/
 
 

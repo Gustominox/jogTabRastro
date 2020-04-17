@@ -135,7 +135,11 @@ void comando_ler(ESTADO *e, char nome[]){
                 e->tab[j][k] = PRETA;
                 n_jogadas_p_jog++;
             }
-            if (temp == '*') e->tab[j][k] = BRANCA;
+            if (temp == '*'){
+                e->tab[j][k] = BRANCA;
+                e->ultima_jogada.coluna = j+1;
+                e->ultima_jogada.linha = k+1;
+            }
             if (temp == '1') e->tab[j][k] = UM;
             if (temp == '2') e->tab[j][k] = DOIS;
             if (temp == '\n')j--;
@@ -149,11 +153,8 @@ void comando_ler(ESTADO *e, char nome[]){
             COORDENADA c = transforma_jogada(temp, temp2);
             e->jogadas[cont].jogador1.coluna = c.coluna;
             e->jogadas[cont].jogador1.linha = c.linha;
-            e->jogador_atual = 2;
-            e->ultima_jogada = c;
-            e->num_jogagas_por_j = n_jogadas_p_jog;
             cont ++;
-            e->num_jogadas = cont;
+
             temp = fgetc(fp);
             if (temp == EOF) break;
             temp = fgetc(fp);
@@ -162,12 +163,18 @@ void comando_ler(ESTADO *e, char nome[]){
             c = transforma_jogada (temp,temp2);
             e->jogadas[cont-1].jogador2.coluna = c.coluna;
             e->jogadas[cont-1].jogador2.linha = c.linha;
-            e->jogador_atual = 1;
-            e->ultima_jogada = c;
             temp = fgetc(fp);
             if (temp == EOF) break;
         }
         e->num_jogagas_por_j = n_jogadas_p_jog;
+        if (e->num_jogagas_por_j % 2 == 1){
+            e->jogador_atual = 2;
+            e->num_jogadas = (e->num_jogagas_por_j+1)/2;
+        }
+        else{
+            e->jogador_atual = 1;
+            e->num_jogadas = (e->num_jogagas_por_j / 2);
+        }
     }
     comando_gr(e,stdout);
 }
@@ -249,4 +256,5 @@ void comando_movs(ESTADO *e,FILE *fp){
         }
     }
     printf("\n%d %d %d %d\n",e->num_jogagas_por_j,e->jogador_atual,e->num_comando,e->num_jogadas);
+    printf("\nultima jogada:%d %d\n",e->ultima_jogada.coluna,e->ultima_jogada.linha);
 }

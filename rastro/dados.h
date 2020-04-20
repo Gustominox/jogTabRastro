@@ -165,14 +165,19 @@ void set_jogador_atual (ESTADO *e,int n);
 */
 void limpa_estado(ESTADO *e);
 
-
+COORDENADA nodoprox;
 
 COORDENADA criar_coordenada(int col, int lin);
 COORDENADA transforma_jogada(char x, char y);
-nodo *init_nodo (nodo *nodol,COORDENADA final, COORDENADA inicial, double peso);
-double calcular_peso_nodo(COORDENADA i, COORDENADA f);
-void criar_rede (nodo *nodol,ESTADO *e);
+nodo *init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso,BOOL player);
+double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player);
+void criar_rede (nodo *nodol,ESTADO *e,BOOL player);
 nodo *menor_peso(nodo *rede[],int k);
 void iguala_tab(ESTADO *e);
-
+void trocarNodos(nodo *nodo1, nodo *nodo2);
+int organiza_rede(nodo *rede[]);
+void print_rede(nodo *rede[]);
+double max(double val1,double val2);
+double min(double val1,double val2);
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player);
 #endif //RASTRO_DADOS_H

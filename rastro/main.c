@@ -4,6 +4,7 @@
 #include "logica.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "listas.h"
 int main(){
     /**
@@ -51,8 +52,8 @@ Pequena introducao
      */
 
 
-     ESTADO *e = inicializar_estado();
-
+    ESTADO *e = inicializar_estado();
+/*
     comando_gr(e,stdout);
     int menu = 0;
     while (menu == 0) {
@@ -65,22 +66,27 @@ Pequena introducao
     if (menu == 2) printf ("\nVenceu o jogador 1.\n");
     if (menu == 3) printf ("\nVenceu o jogador 2.\n");
     printf("\nTerminado o progama\n");
+*/
 
-    /*
     //l = criar_lista();
     nodo *atual;
-    COORDENADA c = {1,1};
-    //atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
-    atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
-    iguala_tab(e);
-    //printf("%d\n",caminh[4][4]);
-
-    criar_rede (atual,e);
+    COORDENADA c = {6,6};
+    //COORDENADA coor = {8,8};
+    atual = init_nodo(0,atual,e->ultima_jogada,c,0,TRUE);
+    printf("%lf",min(NAN,1.0));
+    //double peso = calcular_peso_nodo(c,coor);v
+    //printf("%lf\n",NAN+1.00);    //atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
+    //iguala_tab(e);
+    //criar_rede (atual,e,FALSE);
+    //criar_rede (atual,e,TRUE);
+    //print_rede(atual->nodos);
+    //printf("MINIMAX: %lf\n",minimax(atual,e,3,10000,-10000,TRUE));
+    //printf("nodo escolhido: %d %d",nodoprox.coluna,nodoprox.linha);
     //menor_peso(atual->nodos);
     //insere_cabeca(l,2);
     //percorrer_rede(atual,l);
     //ler_lista_double(l);
-    */
+
     return 0;
 }
 

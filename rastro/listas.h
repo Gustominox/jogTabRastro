@@ -4,8 +4,10 @@
 
 #ifndef RASTRO_LISTAS_H
 #define RASTRO_LISTAS_H
+#include "dados.h"
 typedef struct LISTA{
     void* cabeca;
+    //COORDENADA coord;
     struct LISTA* prox;
 }LISTA;
 // Cria uma lista vazia

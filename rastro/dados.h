@@ -7,7 +7,6 @@ Definição do estado e das funções que o manipulam.
 #define  ___DADOS_H___
 #define BUF_SIZE 1024
 
-#include "dados.h"
 #include "listas.h"
 
 /**
@@ -165,19 +164,21 @@ void set_jogador_atual (ESTADO *e,int n);
 */
 void limpa_estado(ESTADO *e);
 
-COORDENADA nodoprox;
+COORDENADA coords[3];
+
+
 
 COORDENADA criar_coordenada(int col, int lin);
 COORDENADA transforma_jogada(char x, char y);
 nodo *init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso,BOOL player);
 double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player);
-void criar_rede (nodo *nodol,ESTADO *e,BOOL player);
+int criar_rede (nodo *nodol,ESTADO *e,BOOL player);
 nodo *menor_peso(nodo *rede[],int k);
 void iguala_tab(ESTADO *e);
 void trocarNodos(nodo *nodo1, nodo *nodo2);
 int organiza_rede(nodo *rede[]);
-void print_rede(nodo *rede[]);
+void print_rede(nodo *rede[],int num_nodos);
 double max(double val1,double val2);
 double min(double val1,double val2);
-double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player);
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, COORDENADA *arr);
 #endif //RASTRO_DADOS_H

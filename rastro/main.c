@@ -68,19 +68,31 @@ Pequena introducao
     printf("\nTerminado o progama\n");
 */
 
-    //l = criar_lista();
-    nodo *atual;
+    //COORDENADA *cpnt;
     COORDENADA c = {6,6};
-    //COORDENADA coor = {8,8};
+    //cpnt = &c;
+    //l.cabeca = &c.coluna;
+    //l = insere_cabeca(l,x);
+    //ler_lista_double(l);
+    //COORDENADA *coord = l.cabeca;
+    //printf("%d\n",coord->coluna);
+
+    nodo *atual;
     atual = init_nodo(0,atual,e->ultima_jogada,c,0,TRUE);
-    printf("%lf",min(NAN,1.0));
+    printf("MINIMAX: %lf\n",minimax(atual,e,2,NAN,NAN,TRUE,coords));
+    printf("%d %d",coords[2].coluna,coords[2].linha);
+
+
+    //printf("%lf",min(NAN,1.0));
+    //printf("%lf\n", atual->peso);
+    //if (isnan(atual->peso)) printf("okay\n");
+    //else printf("nao okay\n");
     //double peso = calcular_peso_nodo(c,coor);v
     //printf("%lf\n",NAN+1.00);    //atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
     //iguala_tab(e);
     //criar_rede (atual,e,FALSE);
     //criar_rede (atual,e,TRUE);
     //print_rede(atual->nodos);
-    //printf("MINIMAX: %lf\n",minimax(atual,e,3,10000,-10000,TRUE));
     //printf("nodo escolhido: %d %d",nodoprox.coluna,nodoprox.linha);
     //menor_peso(atual->nodos);
     //insere_cabeca(l,2);

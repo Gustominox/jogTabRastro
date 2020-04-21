@@ -97,20 +97,16 @@ COORDENADA transforma_jogada(char col, char lin){
 	return c;
 }
 double max(double val1,double val2){
-    if (val1 == NAN) return val2;
-    if (val2 == NAN) return val1;
+    if (isnan(val1)) return val2;
+    if (isnan(val2)) return val1;
     if (val1 > val2) return val1;
 	else return val2;
 }
 
 double min(double val1,double val2){
-    printf("val1: %lf val2: %lf\n",val1 ,val2);
-    if (val1 == NAN){
-        printf("valor : %lf",val2);
-    }else if (val2 == NAN) {
-        printf("valor : %lf",val1);
-    }
-    else if (val1 < val2) return val1;
+    if (isnan(val1)) return val2;
+    if (isnan(val2)) return val1;
+    if (val1 < val2) return val1;
 	else return val2;
 }
 
@@ -119,33 +115,38 @@ void init_rede(nodo *rede[]){
 	}
 }
 int num_de_cha=1;
-
-double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player) {
-
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player,COORDENADA *arr) {
+    //arr[2-depth]=nodol->final;
     if (depth == 0) {
         return nodol->peso;
     }
 
-    criar_rede(nodol, e, player);
-    int num_nodos_val = organiza_rede(nodol->nodos);
-    printf("rede organizada do nodo %d %d com %d nodos :\n", nodol->final.coluna, nodol->final.linha,num_nodos_val);
-    print_rede(nodol->nodos);
+    int num_nodos_val = criar_rede(nodol, e, player);
 
     if (player == TRUE) {
         double mineval = nodoInv;
         for (int i = 0; i < num_nodos_val; ++i) {
-            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, FALSE);
+            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, FALSE,arr);
             printf("eval do nodo %d %d: %lf\n", nodol->nodos[i]->final.coluna, nodol->nodos[i]->final.linha, eval);
             mineval = min(mineval, eval);
+            if(mineval == eval) arr[2-depth-1]=nodol->nodos[i]->final;
+            alpha = min(alpha,eval);
+            if (beta <= alpha) break;
         }
+
+        if (depth == 2) printf("eval do nodo %d %d: %lf\n", nodol->final.coluna, nodol->final.linha, mineval);
         return mineval;
     } else {
         double maxeval = nodoInv;
         for (int i = 0; i < num_nodos_val; ++i) {
-            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, TRUE);
+            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, TRUE,arr);
             printf("eval do nodo %d %d: %lf\n", nodol->nodos[i]->final.coluna, nodol->nodos[i]->final.linha, eval);
             maxeval = max(maxeval, eval);
+            if(maxeval == eval) arr[2-depth]=nodol->nodos[i]->final;
+            beta = max(beta,eval);
+            if (beta <= alpha) break;
         }
+        if (depth == 2) printf("eval do nodo %d %d: %lf\n", nodol->final.coluna, nodol->final.linha, maxeval);
         return maxeval;
     }
 }
@@ -160,8 +161,6 @@ double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOO
     */
     //printf("minEval do nodo %d %d: %lf\n",nodol->nodos[i]->final.coluna,nodol->nodos[i]->final.linha,maxeval);
     /*
-    alpha = min(alpha,eval);
-    if (beta <= alpha) break;
 */
     //printf("nodo escolhido: %d %d\n",nodoprox.coluna,nodoprox.linha);
     //printf("new child whit alpha %lf and beta %lf\n",alpha,beta);
@@ -175,20 +174,18 @@ double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOO
      */
     //printf("maxEval do nodo %d %d: %lf\n",nodol->nodos[i]->final.coluna,nodol->nodos[i]->final.linha,mineval);
     /*
-    beta = max(beta,eval);
-    if (beta <= alpha) break;
 */
     //printf("nodo escolhido: %d %d\n",nodoprox.coluna,nodoprox.linha);
 
 
 int organiza_rede(nodo *rede[]){
 	int num_nodos_pos = 0;
-	for (int j = 6; j >= 0; --j)
-	for (int i = 0; i < j; ++i) {
-		if (rede[i]->peso  == nodoInv ) trocarNodos(rede[i],rede[i+1]);
-	}
+	//for (int j = 6; j >= 0; --j)
+	//for (int i = 0; i < j; ++i) {
+	//	if (isnan(rede[i]->peso) ) trocarNodos(rede[i],rede[i+1]);
+	//}
 	for (int k = 0; k < 8; ++k)
-		if (rede[k]->peso != nodoInv) num_nodos_pos++;
+		if (isnan(rede[k]->peso) != TRUE) num_nodos_pos++;
 
 	return num_nodos_pos;
 }
@@ -213,10 +210,8 @@ void trocarNodos(nodo *nodo1, nodo *nodo2){
 nodo *init_nodo (double peso_nd_ant,nodo *nodol,COORDENADA inicial, COORDENADA final, double peso,BOOL player){
 	nodol->final = final;
 	nodol->inicial = inicial;
-	if (peso_nd_ant == nodoInv || peso == nodoInv) nodol->peso = NAN;
+	if (isnan(peso_nd_ant) || isnan(peso)) nodol->peso = NAN;
     else nodol->peso = peso_nd_ant+peso;
-	//if (player) nodol->peso = peso_nd_ant+peso;
-	//else nodol->peso = -peso_nd_ant-peso;
 	for (int i = 0; i < 8 ; i++)
 		nodol->nodos[i] = malloc(sizeof(nodo));
 	}
@@ -231,7 +226,7 @@ double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player){
 
 
 
-void criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
+int criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
 
 	COORDENADA c = nodol->final;
 	caminh [c.coluna-1][c.linha-1] = TRUE;
@@ -243,27 +238,9 @@ void criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
         coord2.coluna = 8;
         coord2.linha = 8;
     }
-	/*
-	if (player){
-		if (e->jogador_atual == 1){
-			coord2.coluna = 1;
-			coord2.linha = 1;
-		} else{
-			coord2.coluna = 8;
-			coord2.linha = 8;
-		}
-	} else {
-		if (e->jogador_atual == 1){
-			coord2.coluna = 8;
-			coord2.linha = 8;
-		} else{
-			coord2.coluna = 1;
-			coord2.linha = 1;
-		}
-	}
-	 */
-	if(player) printf("jogador %d na direcao: %d %d\n",e->jogador_atual, coord2.coluna,coord2.linha);
-    else 	printf("jogador %d na direcao: %d %d\n",e->jogador_atual-1, coord2.coluna,coord2.linha);
+
+	//if(player) printf("jogador %d na direcao: %d %d\n",e->jogador_atual, coord2.coluna,coord2.linha);
+    //else 	printf("jogador %d na direcao: %d %d\n",e->jogador_atual-1, coord2.coluna,coord2.linha);
 
 
     int k = 0;
@@ -276,14 +253,15 @@ void criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
 					//printf("%lf\n",nodol->nodos[k]->peso);
 					k++;
 				} else{
-					init_nodo(nodol->peso,nodol->nodos[k],c,coord1,nodoInv,player);
-					printf("nodo invalido: de %d %d para %d %d: \n",c.coluna,c.linha, i, j);
+					//init_nodo(nodol->peso,nodol->nodos[k],c,coord1,nodoInv,player);
+					//printf("nodo invalido: de %d %d para %d %d: \n",c.coluna,c.linha, i, j);
 					//printf("%lf\n",nodol->nodos[k]->peso);
-					if (caminh[i-1][j-1] != TRUE)
-						k++;
+					//if (caminh[i-1][j-1] != TRUE)
+					//	k++;
 				}
 			}
 	}
+	return k;
 	//int num_n = organiza_rede(nodol->nodos);
 	//print_rede(nodol->nodos);
 	//nodo *nodog = menor_peso(nodol->nodos,k);
@@ -292,8 +270,8 @@ void criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
 		// debug: printf("nodo escolhido: %d %d\n",nodog->final.coluna,nodog->final.linha);
 	//          } else printf("fim no nodo: %d %d\n",nodog->final.coluna,nodog->final.linha);
 }
-void print_rede(nodo *rede[]){
-	for (int i = 0; i < 8; ++i) {
+void print_rede(nodo *rede[],int num_nodos){
+	for (int i = 0; i < num_nodos; ++i) {
 		printf(" de %d %d para %d %d: ",rede[i]->inicial.coluna,rede[i]->inicial.linha,rede[i]->final.coluna, rede[i]->final.linha);
 		printf("%lf\n",rede[i]->peso);
 	}

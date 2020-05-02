@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linha',['linha',['../structCOORDENADA.html#aefe14bcc5a066ac3b21500cc3d28c06f',1,'COORDENADA']]]
+  ['inicial',['inicial',['../structnodo.html#a629a84853eaaade078b42b3a36a408e2',1,'nodo']]]
 ];

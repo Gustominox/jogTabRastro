@@ -1,13 +1,13 @@
-//
-// Created by gusto on 4/13/20.
-//
+/**
+@file listas.h
+Definição das funções referentes às listas ligadas.
+*/
 
 #ifndef RASTRO_LISTAS_H
 #define RASTRO_LISTAS_H
 #include "dados.h"
 typedef struct LISTA{
     void* cabeca;
-    //COORDENADA coord;
     struct LISTA* prox;
 }LISTA;
 // Cria uma lista vazia

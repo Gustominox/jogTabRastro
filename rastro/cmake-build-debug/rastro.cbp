@@ -90,6 +90,12 @@
 		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/interface.h">
 			<Option target="rastro"/>
 		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/io.c">
+			<Option target="rastro"/>
+		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/io.h">
+			<Option target="rastro"/>
+		</Unit>
 		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/listas.c">
 			<Option target="rastro"/>
 		</Unit>
@@ -103,6 +109,12 @@
 			<Option target="rastro"/>
 		</Unit>
 		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/main.c">
+			<Option target="rastro"/>
+		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/redes.c">
+			<Option target="rastro"/>
+		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/redes.h">
 			<Option target="rastro"/>
 		</Unit>
 		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/CMakeLists.txt">

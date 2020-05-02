@@ -1,6 +1,7 @@
-//
-// Created by gusto on 4/13/20.
-//
+/**
+@file listas.c
+Construção do código correspondente às funções que dizem respeito às listas ligadas.
+*/
 #include "listas.h"
 #include "stdlib.h"
 #include "stdio.h"
@@ -14,7 +15,6 @@ LISTA criar_lista(){
 
 LISTA insere_cabeca(LISTA l, void *valor){
     LISTA cabeca;
-    //cabeca.cabeca = malloc(sizeof(valor));
     cabeca.cabeca = valor;
     cabeca.prox = malloc(sizeof(LISTA));
     *cabeca.prox = l;
@@ -48,5 +48,5 @@ void ler_lista_double(LISTA l){
     if (l.prox != NULL){
         printf("%d",l.cabeca);
         ler_lista_double(*l.prox);
-    } //else printf("%d",l.cabeca);
+    }
 }

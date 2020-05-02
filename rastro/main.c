@@ -1,13 +1,8 @@
-
-#include "dados.h"
-#include "interface.h"
-#include "logica.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "listas.h"
-int main(){
-    /**
+/**
+@file main.c
+Função que controla o progama.
+*/
+/**
 @mainpage Projeto Li2
 
 # Introdução
@@ -51,7 +46,15 @@ Pequena introducao
 
      */
 
-
+#include "dados.h"
+#include "interface.h"
+#include "logica.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "listas.h"
+#include "redes.h"
+int main(){
     ESTADO *e = inicializar_estado();
 /*
     comando_gr(e,stdout);
@@ -68,36 +71,13 @@ Pequena introducao
     printf("\nTerminado o progama\n");
 */
 
-    //COORDENADA *cpnt;
     COORDENADA c = {6,6};
-    //cpnt = &c;
-    //l.cabeca = &c.coluna;
-    //l = insere_cabeca(l,x);
-    //ler_lista_double(l);
-    //COORDENADA *coord = l.cabeca;
-    //printf("%d\n",coord->coluna);
 
     nodo *atual;
     atual = init_nodo(0,atual,e->ultima_jogada,c,0,TRUE);
     printf("MINIMAX: %lf\n",minimax(atual,e,2,NAN,NAN,TRUE,coords));
     printf("%d %d",coords[2].coluna,coords[2].linha);
 
-
-    //printf("%lf",min(NAN,1.0));
-    //printf("%lf\n", atual->peso);
-    //if (isnan(atual->peso)) printf("okay\n");
-    //else printf("nao okay\n");
-    //double peso = calcular_peso_nodo(c,coor);v
-    //printf("%lf\n",NAN+1.00);    //atual = init_nodo(atual,e->ultima_jogada,c,-1.0);
-    //iguala_tab(e);
-    //criar_rede (atual,e,FALSE);
-    //criar_rede (atual,e,TRUE);
-    //print_rede(atual->nodos);
-    //printf("nodo escolhido: %d %d",nodoprox.coluna,nodoprox.linha);
-    //menor_peso(atual->nodos);
-    //insere_cabeca(l,2);
-    //percorrer_rede(atual,l);
-    //ler_lista_double(l);
 
     return 0;
 }

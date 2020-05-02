@@ -177,6 +177,33 @@ interface.c.s:
 	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/interface.c.s
 .PHONY : interface.c.s
 
+io.o: io.c.o
+
+.PHONY : io.o
+
+# target to build an object file
+io.c.o:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/io.c.o
+.PHONY : io.c.o
+
+io.i: io.c.i
+
+.PHONY : io.i
+
+# target to preprocess a source file
+io.c.i:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/io.c.i
+.PHONY : io.c.i
+
+io.s: io.c.s
+
+.PHONY : io.s
+
+# target to generate assembly for a file
+io.c.s:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/io.c.s
+.PHONY : io.c.s
+
 listas.o: listas.c.o
 
 .PHONY : listas.o
@@ -258,6 +285,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/main.c.s
 .PHONY : main.c.s
 
+redes.o: redes.c.o
+
+.PHONY : redes.o
+
+# target to build an object file
+redes.c.o:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/redes.c.o
+.PHONY : redes.c.o
+
+redes.i: redes.c.i
+
+.PHONY : redes.i
+
+# target to preprocess a source file
+redes.c.i:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/redes.c.i
+.PHONY : redes.c.i
+
+redes.s: redes.c.s
+
+.PHONY : redes.s
+
+# target to generate assembly for a file
+redes.c.s:
+	$(MAKE) -f CMakeFiles/rastro.dir/build.make CMakeFiles/rastro.dir/redes.c.s
+.PHONY : redes.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +327,9 @@ help:
 	@echo "... interface.o"
 	@echo "... interface.i"
 	@echo "... interface.s"
+	@echo "... io.o"
+	@echo "... io.i"
+	@echo "... io.s"
 	@echo "... listas.o"
 	@echo "... listas.i"
 	@echo "... listas.s"
@@ -282,6 +339,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... redes.o"
+	@echo "... redes.i"
+	@echo "... redes.s"
 .PHONY : help
 
 

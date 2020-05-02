@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['num_5fcomando',['num_comando',['../structESTADO.html#adf1064dfc09145b6995a7897249f1674',1,'ESTADO']]],
-  ['num_5fjogadas',['num_jogadas',['../structESTADO.html#a261495728744647e618b4e623f5a4b7a',1,'ESTADO']]],
-  ['num_5fjogagas_5fpor_5fj',['num_jogagas_por_j',['../structESTADO.html#a3723f750e03d043ff72cececc0c3c391',1,'ESTADO']]]
+  ['jogadas',['jogadas',['../structESTADO.html#afae43b87a488fad0f2b56a18bad31d18',1,'ESTADO']]],
+  ['jogador1',['jogador1',['../structJOGADA.html#a93d9306cb0c49b66b7d9a615bffe0149',1,'JOGADA']]],
+  ['jogador2',['jogador2',['../structJOGADA.html#ab46b16dfbdc7f2af9430c8dcdac0914b',1,'JOGADA']]],
+  ['jogador_5fatual',['jogador_atual',['../structESTADO.html#a5dd28e2e68b7aef2b6b7ea88e02eff58',1,'ESTADO']]]
 ];

@@ -1,4 +1,7 @@
-
+/**
+@file interface.c
+Construção do código correspondente às funções que dizem respeito à interface
+*/
 #include <stdio.h>
 #include <string.h>
 #include "interface.h"

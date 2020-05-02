@@ -24,7 +24,7 @@ double min(double val1,double val2){
     else return val2;
 }
 
-int num_de_cha=1;
+
 double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player,COORDENADA *arr) {
     //arr[2-depth]=nodol->final;
     if (depth == 0) {
@@ -89,15 +89,15 @@ if (depth!=3) {
 
 
 int organiza_rede(nodo *rede[]){
-    int num_nodos_pos = 0;
-    //for (int j = 6; j >= 0; --j)
-    //for (int i = 0; i < j; ++i) {
-    //	if (isnan(rede[i]->peso) ) trocarNodos(rede[i],rede[i+1]);
-    //}
+    int num_nodos_val = 0;
+    for (int j = 7; j >= 0; --j)
+    for (int i = 0; i < j; ++i) {
+    	if (isnan(rede[i]->peso) ) trocarNodos(rede[i],rede[i+1]);
+    }
     for (int k = 0; k < 8; ++k)
-        if (isnan(rede[k]->peso) != TRUE) num_nodos_pos++;
+        if (isnan(rede[k]->peso) != TRUE) num_nodos_val++;
 
-    return num_nodos_pos;
+    return num_nodos_val;
 }
 void trocarNodos(nodo *nodo1, nodo *nodo2){
 

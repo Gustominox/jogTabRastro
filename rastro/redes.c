@@ -24,10 +24,6 @@ double min(double val1,double val2){
     else return val2;
 }
 
-void init_rede(nodo *rede[]){
-    for (int i = 0; i < 8; ++i) {
-    }
-}
 int num_de_cha=1;
 double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player,COORDENADA *arr) {
     //arr[2-depth]=nodol->final;

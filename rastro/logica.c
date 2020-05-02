@@ -27,7 +27,7 @@ int jogar(ESTADO *e, COORDENADA c) {
         //e->jogadas[get_num_jog(e)].jogador1.linha = c.linha;
         set_jog_atual(e,2);
         //e->jogador_atual = 2;
-        set_num_jogadas(e,get_num_jog(e)+1);
+        set_num_jog(e,get_num_jog(e)+1);
         //e->num_jogadas++;
     }
     else {

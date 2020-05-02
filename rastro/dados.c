@@ -13,7 +13,7 @@ ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
     e->jogador_atual = 2;
     e->num_jogadas = 0;
-    e->num_jogagas_por_j = 0;
+    e->num_jogadas_por_j = 0;
     for (int j = 0; j < 8; j++)
         for (int i = 0; i < 8 ; i++)
             e->tab [i][j] = VAZIO;
@@ -52,11 +52,11 @@ void set_num_jog(ESTADO *e,int nov_jog){
 }
 
 int get_num_jog_joga(ESTADO *e){
-    return e->num_jogagas_por_j;
+    return e->num_jogadas_por_j;
 }
 
 void set_num_jog_joga(ESTADO *e, int nov_jog_por_j){
-    e->num_jogagas_por_j = nov_jog_por_j;
+    e->num_jogadas_por_j = nov_jog_por_j;
 }
 
 int get_num_comandos(ESTADO *e){
@@ -95,7 +95,7 @@ void set_arr_jog_j2 (ESTADO *e,int n, COORDENADA c){
 void limpa_estado(ESTADO *e){
     e->jogador_atual = 1;
     e->num_jogadas = 0;
-    e->num_jogagas_por_j = 0;
+    e->num_jogadas_por_j = 0;
     for (int j = 0; j < 8; j++) {
         for (int i = 0; i < 8 ; i++) {
             e->tab [i][j] = VAZIO;

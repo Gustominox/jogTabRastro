@@ -8,38 +8,32 @@ Construção do código correspondente às funções que dizem respeito à inter
 
 
 void comando_pos (ESTADO *e, int n){
-    int k = get_num_comandos(e);
+    int k = get_num_com(e);
     if (n < get_num_jog(e) && n > 0){
         limpa_estado(e);
         for (int i = 0; i < n; i++){
             if (i != n-1){
-                set_casa(e,get_arr_jog_j1(e,i), PRETA);
-                set_casa(e,get_arr_jog_j2(e,i), PRETA);
+                set_casa(e,get_arr_jog_j1(e,i).coluna,get_arr_jog_j1(e,i).linha, PRETA);
+                set_casa(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha, PRETA);
             }
             else {
-                set_casa(e,get_arr_jog_j1(e,i), PRETA);
-                set_casa(e,get_arr_jog_j2(e,i), BRANCA);
+                set_casa(e,get_arr_jog_j1(e,i).coluna,get_arr_jog_j1(e,i).linha, PRETA);
+                set_casa(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha, BRANCA);
                 set_ult_jog(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha);
-                //e->ultima_jogada = e->jogadas[i].jogador2;
             }
         }
         set_num_jog(e,n);
-        //e->num_jogadas = n;
-        set_num_comandos(e,k);
-        //e->num_comando = k;
+        set_num_com(e,k);
         set_num_jog_joga(e,n*2);
-        //e->num_jogagas_por_j = n*2;
-        COORDENADA coord;
-        coord.coluna = 5;
-        coord.linha = 5;
+
         if (n != 0)
-            set_casa(e, coord, PRETA);
+            set_casa(e, 5, 5, PRETA);
     } else printf("Impossível executar pos %d\n", n);
     comando_gr(e,stdout);
 }
 
 int comando_q(ESTADO *e){
-    return 2;
+    return 4;
 }
 
 void comando_ler(ESTADO *e, char nome[]){
@@ -57,19 +51,17 @@ void comando_ler(ESTADO *e, char nome[]){
                 j = 0;
                 k--;
             }
-            if (temp == '.') set_casa(e,j,k,VAZIO);//e->tab[j][k] = VAZIO
+            if (temp == '.') set_casa(e,j,k,VAZIO);
             if (temp == '#'){
-                set_casa(e,j,k,PRETA);//e->tab[j][k] = PRETA
-                set_num_jog_joga(e,get_num_jog_joga(e)+1);//n_jogadas_p_jog++
+                set_casa(e,j,k,PRETA);
+                set_num_jog_joga(e,get_num_jog_joga(e)+1);
             }
             if (temp == '*'){
-                set_casa(e,j,k,BRANCA);//e->tab[j][k] = BRANCA
+                set_casa(e,j,k,BRANCA);
                 set_ult_jog(e,j+1,k+1);
-                //e->ultima_jogada.coluna = j+1
-                //e->ultima_jogada.linha = k+1
             }
-            if (temp == '1') set_casa(e,j,k,UM);//e->tab[j][k] = UM
-            if (temp == '2') set_casa(e,j,k,DOIS);//e->tab[j][k] = DOIS
+            if (temp == '1') set_casa(e,j,k,UM);
+            if (temp == '2') set_casa(e,j,k,DOIS);
             if (temp == '\n') j--;
             j++;
 
@@ -80,8 +72,6 @@ void comando_ler(ESTADO *e, char nome[]){
 
             COORDENADA c = transforma_jogada(temp, temp2);
             set_arr_jog_j1(e,cont,c);
-            //e->jogadas[cont].jogador1.coluna = c.coluna
-            //e->jogadas[cont].jogador1.linha = c.linha
             cont ++;
 
             temp = fgetc(fp);
@@ -91,24 +81,17 @@ void comando_ler(ESTADO *e, char nome[]){
 
             c = transforma_jogada (temp,temp2);
             set_arr_jog_j2(e,cont-1,c);
-            //e->jogadas[cont-1].jogador2.coluna = c.coluna
-            //e->jogadas[cont-1].jogador2.linha = c.linha
             temp = fgetc(fp);
             if (temp == EOF) break;
         }
         set_num_jog_joga(e,n_jogadas_p_jog);
-        //e->num_jogagas_por_j = n_jogadas_p_jog
         if (get_num_jog_joga(e) % 2 == 1){
             set_jog_atual(e,2);
-            //e->jogador_atual = 2
             set_num_jog(e, (get_num_jog_joga(e)+1)/2);
-            //e->num_jogadas = (e->num_jogagas_por_j+1)/2
         }
         else{
             set_jog_atual(e,1);
-            //e->jogador_atual = 1
             set_num_jog(e, get_num_jog_joga(e)/2);
-            //e->num_jogadas = (e->num_jogagas_por_j / 2)
         }
     }
     comando_gr(e,stdout);
@@ -165,20 +148,20 @@ void comando_tab(ESTADO *e, FILE *fp){
 
 void comando_movs(ESTADO *e,FILE *fp){
     int cont = 0;
-    for (int i = 0 ; i < e->num_jogagas_por_j; ++i) {
+    for (int i = 0 ; i < get_num_jog_joga(e); ++i) {
         if (i % 2 == 0) {
-            int coluna_jog1 = e->jogadas[cont].jogador1.coluna;
-            int linha_jog1 = e->jogadas[cont].jogador1.linha;
+            int coluna_jog1 = get_arr_jog_j1(e,cont).coluna;
+            int linha_jog1 = get_arr_jog_j1(e,cont).linha;
             if (cont < 9)
                 fprintf(fp ,"0%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
             else fprintf(fp ,"%d: %c%d", cont+1, coluna_jog1 + 96, linha_jog1);
         } else {
-            int coluna_jog2 = e->jogadas[cont].jogador2.coluna;
-            int linha_jog2 = e->jogadas[cont].jogador2.linha;
+            int coluna_jog2 = get_arr_jog_j2(e,cont).coluna;
+            int linha_jog2 = get_arr_jog_j2(e,cont).linha;
             fprintf(fp ," %c%d\n", coluna_jog2+96, linha_jog2);
             cont ++;
         }
     }
-    printf("\n%d %d %d %d\n",e->num_jogagas_por_j,e->jogador_atual,e->num_comando,e->num_jogadas);
-    printf("\nultima jogada:%d %d\n",e->ultima_jogada.coluna,e->ultima_jogada.linha);
+    printf("\n%d %d %d %d\n",get_num_jog_joga(e),get_jog_atual(e),get_num_com(e),get_num_jog(e));
+    printf("\nultima jogada:%d %d\n",get_ult_jog(e).coluna,get_ult_jog(e).linha);
 }

@@ -79,7 +79,7 @@ typedef struct {
     /** A coordenada da última jogada */
     COORDENADA ultima_jogada;
     /** O nº de jogadas por jogador */
-    int num_jogagas_por_j;
+    int num_jogadas_por_j;
 } ESTADO;
 
 /**
@@ -159,14 +159,14 @@ void set_num_jog_joga(ESTADO *e, int nov_jog_por_j)
 \brief Obtem o número de comandos
 @return um inteiro
 */
-int get_num_comandos(ESTADO *e);
+int get_num_com(ESTADO *e);
 
 /**
 \brief Muda o número de comandos
 @param e Apontador para o estado
 @param nov_com Novo número de comandos
 */
-void set_num_comandos(ESTADO *e, int nov_com);
+void set_num_com(ESTADO *e, int nov_com);
 
 /**
 \brief Devolve o valor de uma casa

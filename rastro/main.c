@@ -68,6 +68,7 @@ int main(){
     }
     if (menu == 2) printf ("\nVenceu o jogador 1.\n");
     if (menu == 3) printf ("\nVenceu o jogador 2.\n");
+    if (menu == 4) printf ("\nJogo terminado pelo user.\n");
     printf("\nTerminado o progama\n");
 */
 

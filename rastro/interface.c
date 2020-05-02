@@ -9,7 +9,7 @@
 
 void prompt (ESTADO *e){
     printf ("\n# ");
-    printf ("%d ", get_num_comandos(e));
+    printf ("%d ", get_num_com(e));
     printf ("PL%d ", get_jog_atual(e));
     printf ("(%d)> ", get_num_jog(e));
 }
@@ -33,7 +33,7 @@ int interpretador(ESTADO *e) {
         coord.coluna ++;
         r = jogar(e, coord);
         if (r == 1) return r;
-        set_num_comandos(e,get_num_com(e)+1);
+        set_num_com(e,get_num_com(e)+1);
         //e->num_comando ++;
         set_num_jog_joga(e,get_num_jog_joga(e)+1);
         //e->num_jogagas_por_j ++;
@@ -45,29 +45,29 @@ int interpretador(ESTADO *e) {
             FILE *fp = fopen(nome, "w");
             comando_gr(e, fp);
             fclose(fp);
-            set_num_comandos(e,get_num_com(e)+1);
+            set_num_com(e,get_num_com(e)+1);
             //e->num_comando++;
         }
         if (strcmp(comandos, "q") == 0) {
             r = comando_q(e);
-            set_num_comandos(e,get_num_com(e)+1);
+            set_num_com(e,get_num_com(e)+1);
             //e->num_comando++;
         }
         if (strcmp(comandos, "ler") == 0) {
             comando_ler(e, nome);
-            set_num_comandos(e,get_num_com(e)+1);
+            set_num_com(e,get_num_com(e)+1);
             //e->num_comando++;
         }
         if (strcmp(comandos, "movs") == 0) {
             comando_movs(e, stdout);
-            set_num_comandos(e,get_num_com(e)+1);
+            set_num_com(e,get_num_com(e)+1);
             //e->num_comando++;
         }
         if (strcmp(comandos, "pos") == 0) {
             int n;
             sscanf(nome,"%d",&n);
             comando_pos(e,n);
-            set_num_comandos(e,get_num_com(e)+1);
+            set_num_com(e,get_num_com(e)+1);
             //e->num_comando++;
         }
     }

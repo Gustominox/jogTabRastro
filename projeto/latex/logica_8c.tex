@@ -1,0 +1,101 @@
+\hypertarget{logica_8c}{}\section{Referência ao ficheiro logica.\+c}
+\label{logica_8c}\index{logica.\+c@{logica.\+c}}
+
+
+Construção do código correspondente às funções que dizem respeito à lógica do programa.  
+
+
+{\ttfamily \#include \char`\"{}dados.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logica.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Diagrama de dependências de inclusão para logica.\+c\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{logica_8c_ac313d7e553b1e2b5f266acb9bfff8141}{jogar} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Modifica o estado ao jogar na casa correta se a jogada for válida. \end{DoxyCompactList}\item 
+int \hyperlink{logica_8c_aea1fcb269536a2b7ee0d12518887cd09}{jogo\+\_\+terminado} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Verifica se o jogo terminou ou não. \end{DoxyCompactList}\item 
+int \hyperlink{logica_8c_adb738fd8c3f1bd46985db26411a7d054}{jogada\+\_\+invalida} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} jogada)
+\begin{DoxyCompactList}\small\item\em Verifica se a jogada é válida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Construção do código correspondente às funções que dizem respeito à lógica do programa. 
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{logica_8c_adb738fd8c3f1bd46985db26411a7d054}\label{logica_8c_adb738fd8c3f1bd46985db26411a7d054}} 
+\index{logica.\+c@{logica.\+c}!jogada\+\_\+invalida@{jogada\+\_\+invalida}}
+\index{jogada\+\_\+invalida@{jogada\+\_\+invalida}!logica.\+c@{logica.\+c}}
+\subsubsection{\texorpdfstring{jogada\+\_\+invalida()}{jogada\_invalida()}}
+{\footnotesize\ttfamily int jogada\+\_\+invalida (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{jogada }\end{DoxyParamCaption})}
+
+
+
+Verifica se a jogada é válida. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em jogada} & A coordenada a validar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um inteiro, 0 ou 1 \begin{quote}
+{\bfseries 0} se a jogada {\bfseries valida}, ~\newline
+ {\bfseries 1} se a jogada {\bfseries invalida}\end{quote}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{logica_8c_ac313d7e553b1e2b5f266acb9bfff8141}\label{logica_8c_ac313d7e553b1e2b5f266acb9bfff8141}} 
+\index{logica.\+c@{logica.\+c}!jogar@{jogar}}
+\index{jogar@{jogar}!logica.\+c@{logica.\+c}}
+\subsubsection{\texorpdfstring{jogar()}{jogar()}}
+{\footnotesize\ttfamily int jogar (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Modifica o estado ao jogar na casa correta se a jogada for válida. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada a jogar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um inteiro, 0, 1 ou 2 \begin{quote}
+{\bfseries 0} se a jogada {\bfseries for possível}, ~\newline
+ {\bfseries 1} se a jogada {\bfseries não for possível}, ~\newline
+ {\bfseries 2} quando o {\bfseries jogo deve acabar} e o jogador é {\bfseries 1} ~\newline
+ {\bfseries 3} quando o {\bfseries jogo deve acabar} e o jogador é {\bfseries 2} \end{quote}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Veja também}
+\hyperlink{logica_8h_adb738fd8c3f1bd46985db26411a7d054}{jogada\+\_\+invalida(\+E\+S\+T\+A\+D\+O $\ast$e, C\+O\+O\+R\+D\+E\+N\+A\+D\+A jogada)}; 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{logica_8c_aea1fcb269536a2b7ee0d12518887cd09}\label{logica_8c_aea1fcb269536a2b7ee0d12518887cd09}} 
+\index{logica.\+c@{logica.\+c}!jogo\+\_\+terminado@{jogo\+\_\+terminado}}
+\index{jogo\+\_\+terminado@{jogo\+\_\+terminado}!logica.\+c@{logica.\+c}}
+\subsubsection{\texorpdfstring{jogo\+\_\+terminado()}{jogo\_terminado()}}
+{\footnotesize\ttfamily int jogo\+\_\+terminado (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Verifica se o jogo terminou ou não. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um inteiro, 0, 2 ou 3 \begin{quote}
+{\bfseries 2} se o jogador 1 ganhou ~\newline
+ {\bfseries 3} se o jogador 2 ganhou\end{quote}
+
+\end{DoxyReturn}

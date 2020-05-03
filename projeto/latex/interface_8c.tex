@@ -1,0 +1,82 @@
+\hypertarget{interface_8c}{}\section{Referência ao ficheiro interface.\+c}
+\label{interface_8c}\index{interface.\+c@{interface.\+c}}
+
+
+Construção do código correspondente às funções que dizem respeito à interface.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logica.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dados.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}io.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para interface.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{interface_8c_a6821bafc3c88dfb2e433a095df9940c6}{B\+U\+F\+\_\+\+S\+I\+ZE}~1024
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_8c_a33d09196f922a638847c19f3aca3fc3c}{prompt} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Comando usado para receber o input do user, mostrando a informação do jogo. \end{DoxyCompactList}\item 
+int \hyperlink{interface_8c_a24da95ebeede4a540e37790ce8be359b}{interpretador} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Interpreta os comandos e instruções dados pelos jogadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Construção do código correspondente às funções que dizem respeito à interface. 
+
+
+
+\subsection{Documentação das macros}
+\mbox{\Hypertarget{interface_8c_a6821bafc3c88dfb2e433a095df9940c6}\label{interface_8c_a6821bafc3c88dfb2e433a095df9940c6}} 
+\index{interface.\+c@{interface.\+c}!B\+U\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+\_\+\+S\+I\+ZE}!interface.\+c@{interface.\+c}}
+\subsubsection{\texorpdfstring{B\+U\+F\+\_\+\+S\+I\+ZE}{BUF\_SIZE}}
+{\footnotesize\ttfamily \#define B\+U\+F\+\_\+\+S\+I\+ZE~1024}
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{interface_8c_a24da95ebeede4a540e37790ce8be359b}\label{interface_8c_a24da95ebeede4a540e37790ce8be359b}} 
+\index{interface.\+c@{interface.\+c}!interpretador@{interpretador}}
+\index{interpretador@{interpretador}!interface.\+c@{interface.\+c}}
+\subsubsection{\texorpdfstring{interpretador()}{interpretador()}}
+{\footnotesize\ttfamily int interpretador (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Interpreta os comandos e instruções dados pelos jogadores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Estado atual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um inteiro, 0, 1, 2 ou 3
+\end{DoxyReturn}
+\begin{quote}
+{\bfseries 0} Sucesso ~\newline
+ {\bfseries 1} Se a jogada for inválida ~\newline
+ {\bfseries 2} Se o jogador 1 ganhar ~\newline
+ {\bfseries 3} Se o jogador 2 ganhar\end{quote}
+\mbox{\Hypertarget{interface_8c_a33d09196f922a638847c19f3aca3fc3c}\label{interface_8c_a33d09196f922a638847c19f3aca3fc3c}} 
+\index{interface.\+c@{interface.\+c}!prompt@{prompt}}
+\index{prompt@{prompt}!interface.\+c@{interface.\+c}}
+\subsubsection{\texorpdfstring{prompt()}{prompt()}}
+{\footnotesize\ttfamily void prompt (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Comando usado para receber o input do user, mostrando a informação do jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Estado atual \\
+\hline
+\end{DoxyParams}

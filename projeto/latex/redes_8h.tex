@@ -1,0 +1,308 @@
+\hypertarget{redes_8h}{}\section{Referência ao ficheiro redes.\+h}
+\label{redes_8h}\index{redes.\+h@{redes.\+h}}
+
+
+Definição das funções que criam ,modificam e analisam a rede.  
+
+
+{\ttfamily \#include \char`\"{}dados.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para redes.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnodo}{nodo}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para o nodo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structnodo}{nodo} $\ast$ \hyperlink{redes_8h_ae4343d882310b4cf47638a1465eadaed}{rede}\mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em Definição de um array de pointers de nodos com tamanho 8. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structnodo}{nodo} \hyperlink{redes_8h_a93778e963712308112f6222068a54474}{nodo}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para o nodo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structnodo}{nodo} $\ast$ \hyperlink{redes_8h_a7fe7b5d9aafc4cd2f2d3afa8a12ab744}{init\+\_\+nodo} (double peso\+\_\+nd\+\_\+ant, \hyperlink{structnodo}{nodo} $\ast$nodol, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} final, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} inicial, double peso, \hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL} player)
+\begin{DoxyCompactList}\small\item\em Inicia um nodo com os valores recebidos na função e aloca o espaço de memória para os próximos nodos. \end{DoxyCompactList}\item 
+double \hyperlink{redes_8h_abeffa18b1af8bd53e88347d0d4abb4de}{calcular\+\_\+peso\+\_\+nodo} (\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} i, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} f, \hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL} player)
+\begin{DoxyCompactList}\small\item\em Calcula o peso do nodo, pelo Teorema de Pitágoras. \end{DoxyCompactList}\item 
+int \hyperlink{redes_8h_a7375fcb92654ae749be9d2da85208086}{criar\+\_\+rede} (\hyperlink{structnodo}{nodo} $\ast$nodol, \hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL} player)
+\begin{DoxyCompactList}\small\item\em Para um dado nodo, inicia os nodos contidos no seu array \char`\"{}nodos\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{nodo} $\ast$ \hyperlink{redes_8h_ab90e17698fe3b73450a88bcf3d87ca93}{menor\+\_\+peso} (\hyperlink{structnodo}{nodo} $\ast$\hyperlink{redes_8h_ae4343d882310b4cf47638a1465eadaed}{rede}\mbox{[}$\,$\mbox{]}, int k)
+\begin{DoxyCompactList}\small\item\em Dado uma rede e o seu tamanho, retorna o nodo de menor peso. \end{DoxyCompactList}\item 
+void \hyperlink{redes_8h_a8240d61b670b2f6ffdd0e3dfa7ac99af}{iguala\+\_\+tab} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Iguala os valores do tabuleiro com uma matriz de igual tamanho, em que uma peça {\bfseries P\+R\+E\+TA} é {\itshape true} e qualquer outra peça é {\itshape false}. \end{DoxyCompactList}\item 
+void \hyperlink{redes_8h_afa052f7e9be70bd5c814b6ce8b305e37}{trocar\+Nodos} (\hyperlink{structnodo}{nodo} $\ast$nodo1, \hyperlink{structnodo}{nodo} $\ast$nodo2)
+\begin{DoxyCompactList}\small\item\em Troca os nodos de posição um com o outro. \end{DoxyCompactList}\item 
+int \hyperlink{redes_8h_a6348f74adafd775ed9959de3976e2239}{organiza\+\_\+rede} (\hyperlink{structnodo}{nodo} $\ast$\hyperlink{redes_8h_ae4343d882310b4cf47638a1465eadaed}{rede}\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Organiza a rede, segundo uma modificação do valor sort em que os nodos inválidos são postos no fim do array. \end{DoxyCompactList}\item 
+void \hyperlink{redes_8h_ade5489d3c02f7c8485b511256b312ca5}{print\+\_\+rede} (\hyperlink{structnodo}{nodo} $\ast$\hyperlink{redes_8h_ae4343d882310b4cf47638a1465eadaed}{rede}\mbox{[}$\,$\mbox{]}, int num\+\_\+nodos)
+\begin{DoxyCompactList}\small\item\em Mostra os valores da rede, função criada para debug. \end{DoxyCompactList}\item 
+double \hyperlink{redes_8h_a7b5f0e385f07d7cef697d414989b8a3e}{max} (double val1, double val2)
+\begin{DoxyCompactList}\small\item\em Calcula o valor máximo entre dois doubles. \end{DoxyCompactList}\item 
+double \hyperlink{redes_8h_afd7ff9da701b70c455f8177b15e8b7eb}{min} (double val1, double val2)
+\begin{DoxyCompactList}\small\item\em Calcula o valor mínimo entre os dois doubles. \end{DoxyCompactList}\item 
+double \hyperlink{redes_8h_adacb05e9250e8f4030d594a2dc4439a7}{minimax} (\hyperlink{structnodo}{nodo} $\ast$nodol, \hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int depth, double alpha, double beta, \hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL} player, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} $\ast$arr)
+\begin{DoxyCompactList}\small\item\em Objetivo minmax, todo augusto comentarios + explicaçao. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Definição das funções que criam ,modificam e analisam a rede. 
+
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{redes_8h_a93778e963712308112f6222068a54474}\label{redes_8h_a93778e963712308112f6222068a54474}} 
+\index{redes.\+h@{redes.\+h}!nodo@{nodo}}
+\index{nodo@{nodo}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{nodo}{nodo}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structnodo}{nodo} \hyperlink{structnodo}{nodo}}
+
+
+
+Tipo de dados para o nodo. 
+
+\mbox{\Hypertarget{redes_8h_ae4343d882310b4cf47638a1465eadaed}\label{redes_8h_ae4343d882310b4cf47638a1465eadaed}} 
+\index{redes.\+h@{redes.\+h}!rede@{rede}}
+\index{rede@{rede}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{rede}{rede}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structnodo}{nodo}$\ast$ rede\mbox{[}8\mbox{]}}
+
+
+
+Definição de um array de pointers de nodos com tamanho 8. 
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{redes_8h_abeffa18b1af8bd53e88347d0d4abb4de}\label{redes_8h_abeffa18b1af8bd53e88347d0d4abb4de}} 
+\index{redes.\+h@{redes.\+h}!calcular\+\_\+peso\+\_\+nodo@{calcular\+\_\+peso\+\_\+nodo}}
+\index{calcular\+\_\+peso\+\_\+nodo@{calcular\+\_\+peso\+\_\+nodo}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{calcular\+\_\+peso\+\_\+nodo()}{calcular\_peso\_nodo()}}
+{\footnotesize\ttfamily double calcular\+\_\+peso\+\_\+nodo (\begin{DoxyParamCaption}\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{i,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{f,  }\item[{\hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL}}]{player }\end{DoxyParamCaption})}
+
+
+
+Calcula o peso do nodo, pelo Teorema de Pitágoras. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em i} & Coordenada do nodo inicial \\
+\hline
+{\em f} & Coordenada do nodo final \\
+\hline
+{\em player} & Variável que indica se é o jogador atual a jogar ou não \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o peso do nodo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_a7375fcb92654ae749be9d2da85208086}\label{redes_8h_a7375fcb92654ae749be9d2da85208086}} 
+\index{redes.\+h@{redes.\+h}!criar\+\_\+rede@{criar\+\_\+rede}}
+\index{criar\+\_\+rede@{criar\+\_\+rede}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{criar\+\_\+rede()}{criar\_rede()}}
+{\footnotesize\ttfamily int criar\+\_\+rede (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{nodol,  }\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL}}]{player }\end{DoxyParamCaption})}
+
+
+
+Para um dado nodo, inicia os nodos contidos no seu array \char`\"{}nodos\char`\"{}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nodol} & Nodo local \\
+\hline
+{\em e} & Apontador para o estado \\
+\hline
+{\em player} & Variável que indica se é o jogador atual a jogar ou não \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o tamanho da rede 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_a8240d61b670b2f6ffdd0e3dfa7ac99af}\label{redes_8h_a8240d61b670b2f6ffdd0e3dfa7ac99af}} 
+\index{redes.\+h@{redes.\+h}!iguala\+\_\+tab@{iguala\+\_\+tab}}
+\index{iguala\+\_\+tab@{iguala\+\_\+tab}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{iguala\+\_\+tab()}{iguala\_tab()}}
+{\footnotesize\ttfamily void iguala\+\_\+tab (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Iguala os valores do tabuleiro com uma matriz de igual tamanho, em que uma peça {\bfseries P\+R\+E\+TA} é {\itshape true} e qualquer outra peça é {\itshape false}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{redes_8h_a7fe7b5d9aafc4cd2f2d3afa8a12ab744}\label{redes_8h_a7fe7b5d9aafc4cd2f2d3afa8a12ab744}} 
+\index{redes.\+h@{redes.\+h}!init\+\_\+nodo@{init\+\_\+nodo}}
+\index{init\+\_\+nodo@{init\+\_\+nodo}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{init\+\_\+nodo()}{init\_nodo()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{nodo}$\ast$ init\+\_\+nodo (\begin{DoxyParamCaption}\item[{double}]{peso\+\_\+nd\+\_\+ant,  }\item[{\hyperlink{structnodo}{nodo} $\ast$}]{nodol,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{final,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{inicial,  }\item[{double}]{peso,  }\item[{\hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL}}]{player }\end{DoxyParamCaption})}
+
+
+
+Inicia um nodo com os valores recebidos na função e aloca o espaço de memória para os próximos nodos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em peso\+\_\+nd\+\_\+ant} & Peso do nodo anterior \\
+\hline
+{\em nodol} & Nodo local \\
+\hline
+{\em final} & Coordenada do nodo atual \\
+\hline
+{\em inicial} & Coordenada do nodo anterior \\
+\hline
+{\em peso} & Peso do nodo atual \\
+\hline
+{\em player} & Variável que indica se é o jogador atual a jogar ou não \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o nodo iniciado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_a7b5f0e385f07d7cef697d414989b8a3e}\label{redes_8h_a7b5f0e385f07d7cef697d414989b8a3e}} 
+\index{redes.\+h@{redes.\+h}!max@{max}}
+\index{max@{max}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily double max (\begin{DoxyParamCaption}\item[{double}]{val1,  }\item[{double}]{val2 }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor máximo entre dois doubles. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em val1} & Primeiro valor \\
+\hline
+{\em val2} & Segundo valor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o maior valor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_ab90e17698fe3b73450a88bcf3d87ca93}\label{redes_8h_ab90e17698fe3b73450a88bcf3d87ca93}} 
+\index{redes.\+h@{redes.\+h}!menor\+\_\+peso@{menor\+\_\+peso}}
+\index{menor\+\_\+peso@{menor\+\_\+peso}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{menor\+\_\+peso()}{menor\_peso()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{nodo}$\ast$ menor\+\_\+peso (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{rede\mbox{[}$\,$\mbox{]},  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Dado uma rede e o seu tamanho, retorna o nodo de menor peso. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rede} & Array de pointers de nodos \\
+\hline
+{\em k} & O tamanho do array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o nodo de menor peso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_afd7ff9da701b70c455f8177b15e8b7eb}\label{redes_8h_afd7ff9da701b70c455f8177b15e8b7eb}} 
+\index{redes.\+h@{redes.\+h}!min@{min}}
+\index{min@{min}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily double min (\begin{DoxyParamCaption}\item[{double}]{val1,  }\item[{double}]{val2 }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor mínimo entre os dois doubles. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em val1} & Primeiro valor \\
+\hline
+{\em val2} & Segundo valor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o menor valor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_adacb05e9250e8f4030d594a2dc4439a7}\label{redes_8h_adacb05e9250e8f4030d594a2dc4439a7}} 
+\index{redes.\+h@{redes.\+h}!minimax@{minimax}}
+\index{minimax@{minimax}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{minimax()}{minimax()}}
+{\footnotesize\ttfamily double minimax (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{nodol,  }\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{depth,  }\item[{double}]{alpha,  }\item[{double}]{beta,  }\item[{\hyperlink{dados_8h_a3e5b8192e7d9ffaf3542f1210aec18dd}{B\+O\+OL}}]{player,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} $\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Objetivo minmax, todo augusto comentarios + explicaçao. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nodol} & Nodo local \\
+\hline
+{\em e} & Apontador para o estado \\
+\hline
+{\em depth} & \\
+\hline
+{\em player} & Variável que indica se é o jogador atual a jogar ou não \\
+\hline
+{\em arr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o nodo de menor peso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_a6348f74adafd775ed9959de3976e2239}\label{redes_8h_a6348f74adafd775ed9959de3976e2239}} 
+\index{redes.\+h@{redes.\+h}!organiza\+\_\+rede@{organiza\+\_\+rede}}
+\index{organiza\+\_\+rede@{organiza\+\_\+rede}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{organiza\+\_\+rede()}{organiza\_rede()}}
+{\footnotesize\ttfamily int organiza\+\_\+rede (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{rede\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Organiza a rede, segundo uma modificação do valor sort em que os nodos inválidos são postos no fim do array. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rede} & Array de pointers de nodos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+número de nodos válidos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{redes_8h_ade5489d3c02f7c8485b511256b312ca5}\label{redes_8h_ade5489d3c02f7c8485b511256b312ca5}} 
+\index{redes.\+h@{redes.\+h}!print\+\_\+rede@{print\+\_\+rede}}
+\index{print\+\_\+rede@{print\+\_\+rede}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+rede()}{print\_rede()}}
+{\footnotesize\ttfamily void print\+\_\+rede (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{rede\mbox{[}$\,$\mbox{]},  }\item[{int}]{num\+\_\+nodos }\end{DoxyParamCaption})}
+
+
+
+Mostra os valores da rede, função criada para debug. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rede} & Array de pointers de nodos \\
+\hline
+{\em num\+\_\+nodos} & Tamanho da rede \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{redes_8h_afa052f7e9be70bd5c814b6ce8b305e37}\label{redes_8h_afa052f7e9be70bd5c814b6ce8b305e37}} 
+\index{redes.\+h@{redes.\+h}!trocar\+Nodos@{trocar\+Nodos}}
+\index{trocar\+Nodos@{trocar\+Nodos}!redes.\+h@{redes.\+h}}
+\subsubsection{\texorpdfstring{trocar\+Nodos()}{trocarNodos()}}
+{\footnotesize\ttfamily void trocar\+Nodos (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{nodo} $\ast$}]{nodo1,  }\item[{\hyperlink{structnodo}{nodo} $\ast$}]{nodo2 }\end{DoxyParamCaption})}
+
+
+
+Troca os nodos de posição um com o outro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nodo1} & Primeiro nodo \\
+\hline
+{\em nodo2} & Segundo nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+o nodo de menor peso 
+\end{DoxyReturn}

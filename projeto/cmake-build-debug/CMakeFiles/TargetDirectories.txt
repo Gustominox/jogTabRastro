@@ -1,0 +1,3 @@
+/home/gusto/Desktop/li2/Li2Pl7g02/projeto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/gusto/Desktop/li2/Li2Pl7g02/projeto/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/gusto/Desktop/li2/Li2Pl7g02/projeto/cmake-build-debug/CMakeFiles/rastro.dir

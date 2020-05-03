@@ -7,8 +7,10 @@ Função que controla o progama.
 
 # Introdução
 
-Pequena introducao
-
+    Nesta cadeira, o objetivo do projeto é implementar o jogo Rastros.
+    Este jogo acontece num tabuleiro de 8 por 8, onde a casa UM é a casa final do primeiro jogador, enquanto que a casa DOIS é a casa final do segundo jogador.
+    Cada um dos jogadores, alternadamente, desloca a peça BRANCA (inicialmente na casa e5) para uma casa VAZIA, podendo fazê-lo numa direção vertical, horizontal ou diagonal. À medida que se joga, as casas previamente ocupadas pela peça BRANCA, passarão a ser ocupadas por uma peça PRETA, não podendo ser mais ocupadas por uma peça BRANCA.
+    Ora, o jogador ganha se deslocar uma peça BRANCA até à sua respetiva casa final ou, então, se for capaz de impedir o seu adversário de jogar, bloqueando-o.
 
 ## Representaçao Do Tabuleiro
 

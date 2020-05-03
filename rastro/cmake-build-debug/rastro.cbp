@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/bot.c">
+			<Option target="rastro"/>
+		</Unit>
+		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/bot.h">
+			<Option target="rastro"/>
+		</Unit>
 		<Unit filename="/home/gusto/Desktop/li2/Li2Pl7g02/rastro/dados.c">
 			<Option target="rastro"/>
 		</Unit>

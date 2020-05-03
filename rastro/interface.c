@@ -42,7 +42,7 @@ int interpretador(ESTADO *e) {
         //e->num_jogagas_por_j ++;
         comando_gr(e,stdout);
     } else {
-        sscanf(linha ,"%s %s",&comandos,&nome);
+        sscanf(linha ,"%s %s",comandos,nome);
 
         if (strcmp(comandos, "gr") == 0) {
             FILE *fp = fopen(nome, "w");

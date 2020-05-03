@@ -13,12 +13,12 @@ void comando_pos (ESTADO *e, int n){
         limpa_estado(e);
         for (int i = 0; i < n; i++){
             if (i != n-1){
-                set_casa(e,get_arr_jog_j1(e,i).coluna,get_arr_jog_j1(e,i).linha, PRETA);
-                set_casa(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha, PRETA);
+                set_casa(e,get_arr_jog_j1(e,i).coluna-1,get_arr_jog_j1(e,i).linha-1, PRETA);
+                set_casa(e,get_arr_jog_j2(e,i).coluna-1,get_arr_jog_j2(e,i).linha-1, PRETA);
             }
             else {
-                set_casa(e,get_arr_jog_j1(e,i).coluna,get_arr_jog_j1(e,i).linha, PRETA);
-                set_casa(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha, BRANCA);
+                set_casa(e,get_arr_jog_j1(e,i).coluna-1,get_arr_jog_j1(e,i).linha-1, PRETA);
+                set_casa(e,get_arr_jog_j2(e,i).coluna-1,get_arr_jog_j2(e,i).linha-1, BRANCA);
                 set_ult_jog(e,get_arr_jog_j2(e,i).coluna,get_arr_jog_j2(e,i).linha);
             }
         }
@@ -27,12 +27,12 @@ void comando_pos (ESTADO *e, int n){
         set_num_jog_joga(e,n*2);
 
         if (n != 0)
-            set_casa(e, 5, 5, PRETA);
+            set_casa(e, 4, 4, PRETA);
     } else printf("Impossível executar pos %d\n", n);
     comando_gr(e,stdout);
 }
 
-int comando_q(ESTADO *e){
+int comando_q(){
     return 4;
 }
 
@@ -41,7 +41,8 @@ void comando_ler(ESTADO *e, char nome[]){
     fp=fopen(nome, "r");
     char temp;
     int cont = 0;
-    int n_jogadas_p_jog = 0;
+
+    limpa_estado(e);
     int j = 0 , k = 7;
     for (int i = 0; i < BUF_SIZE; ++i) {
         temp = fgetc(fp);
@@ -84,7 +85,7 @@ void comando_ler(ESTADO *e, char nome[]){
             temp = fgetc(fp);
             if (temp == EOF) break;
         }
-        set_num_jog_joga(e,n_jogadas_p_jog);
+        //set_num_jog_joga(e,n_jogadas_p_jog);
         if (get_num_jog_joga(e) % 2 == 1){
             set_jog_atual(e,2);
             set_num_jog(e, (get_num_jog_joga(e)+1)/2);
@@ -142,7 +143,9 @@ void comando_tab(ESTADO *e, FILE *fp){
         if (get_casa(e, i, 0) == PRETA)
             fprintf(fp, "#");
     }
-    fprintf(fp,"\n\n");
+    if(fp == stdout) printf("\n");
+    else fprintf(fp,"\n\n");
+
     if(fp == stdout) printf ("  ABCDEFGH\n");
 }
 

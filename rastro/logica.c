@@ -21,7 +21,7 @@ int jogar(ESTADO *e, COORDENADA c) {
     set_ult_jog(e,c.coluna,c.linha);
     //e->ultima_jogada.coluna = c.coluna;
     //e->ultima_jogada.linha = c.linha;
-    if (get_num_jog(e) == 1) {
+    if (get_jog_atual(e) == 1) {
         set_arr_jog_j1(e,get_num_jog(e),c);
         //e->jogadas[get_num_jog(e)].jogador1.coluna = c.coluna;
         //e->jogadas[get_num_jog(e)].jogador1.linha = c.linha;
@@ -31,7 +31,7 @@ int jogar(ESTADO *e, COORDENADA c) {
         //e->num_jogadas++;
     }
     else {
-        set_arr_jog_j2(e,get_num_jog(e),c);
+        set_arr_jog_j2(e,get_num_jog(e)-1,c);
         //e->jogadas[get_num_jog(e)-1].jogador2.coluna = c.coluna;
         //e->jogadas[get_num_jog(e)-1].jogador2.linha = c.linha;
         set_jog_atual(e,1);
@@ -51,7 +51,7 @@ int jogo_terminado(ESTADO *e){
     int flag = 0;
     for (int i = x - 1; i < x + 2; i++)
         for (int j = y - 1; j < y + 2; j++)
-            if ((i <= 8) && (i > 0) && (j <= 8) && (j > 0))
+            if ((i < 8) && (i >= 0) && (j < 8) && (j >= 0))
                 if((get_casa(e,i,j) != PRETA) && (i != x && j != y) )
                     flag = 1;
 

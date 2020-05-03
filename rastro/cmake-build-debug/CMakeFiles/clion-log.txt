@@ -1,4 +1,4 @@
-/snap/clion/111/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gusto/Desktop/li2/Li2Pl7g02/rastro
+/snap/clion/112/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gusto/Desktop/li2/Li2Pl7g02/rastro
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/gusto/Desktop/li2/Li2Pl7g02/rastro/cmake-build-debug

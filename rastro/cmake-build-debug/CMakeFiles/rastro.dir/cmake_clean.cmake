@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rastro.dir/bot.c.o"
   "CMakeFiles/rastro.dir/dados.c.o"
   "CMakeFiles/rastro.dir/interface.c.o"
   "CMakeFiles/rastro.dir/io.c.o"

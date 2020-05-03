@@ -7,8 +7,6 @@ Definição do estado e das funções que o manipulam
 #define  ___DADOS_H___
 #define BUF_SIZE 1024
 
-#include "dados.h"
-#include "listas.h"
 
 /**
 \brief Tipo de dados para os erros
@@ -146,7 +144,7 @@ int get_num_jog_joga(ESTADO *e);
 @param e Apontador para o estado
 @param nov_jog_por_j Novo número de jogadas por jogador
 */
-void set_num_jog_joga(ESTADO *e, int nov_jog_por_j)
+void set_num_jog_joga(ESTADO *e, int nov_jog_por_j);
 
 /**
 \brief Obtem o número de comandos

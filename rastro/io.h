@@ -34,7 +34,7 @@ void comando_tab(ESTADO *e, FILE *fp);
  * @param e Estado atual
  * @returns 2 Acaba o programa
  * */
-int comando_q(ESTADO *e);
+int comando_q();
 
 /** Comando que lê o estado do tabuleiro a partir do ficheiro
  *

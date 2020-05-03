@@ -11,7 +11,7 @@ Construção do código correspondente às funções que dizem respeito ao estad
 #define nodoInv NAN
 ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
-    e->jogador_atual = 2;
+    e->jogador_atual = 1;
     e->num_jogadas = 0;
     e->num_jogadas_por_j = 0;
     for (int j = 0; j < 8; j++)
@@ -59,11 +59,11 @@ void set_num_jog_joga(ESTADO *e, int nov_jog_por_j){
     e->num_jogadas_por_j = nov_jog_por_j;
 }
 
-int get_num_comandos(ESTADO *e){
+int get_num_com(ESTADO *e){
     return e->num_comando;
 }
 
-void set_num_comandos(ESTADO *e, int nov_com){
+void set_num_com(ESTADO *e, int nov_com){
     e->num_comando = nov_com;
 }
 

@@ -32,7 +32,7 @@ typedef struct nodo{
 @param player Variável que indica se é o jogador atual a jogar ou não
 @returns o nodo iniciado
 */
-nodo *init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso,BOOL player);
+void init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso);
 
 /**
 \brief Calcula o peso do nodo, pelo Teorema de Pitágoras
@@ -116,6 +116,6 @@ double min(double val1,double val2);
 @param arr
 @returns o nodo de menor peso
 */
-double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, COORDENADA *arr);
-
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, COORDENADA * coord);
+COORDENADA *coor_create(int col, int lin);
 #endif //RASTRO_REDES_H

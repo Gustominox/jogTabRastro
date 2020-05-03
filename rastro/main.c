@@ -54,9 +54,11 @@ Pequena introducao
 #include <math.h>
 #include "listas.h"
 #include "redes.h"
+#include "bot.h"
+#include "io.h"
+
 int main(){
     ESTADO *e = inicializar_estado();
-/*
     comando_gr(e,stdout);
     int menu = 0;
     while (menu == 0) {
@@ -70,15 +72,6 @@ int main(){
     if (menu == 3) printf ("\nVenceu o jogador 2.\n");
     if (menu == 4) printf ("\nJogo terminado pelo user.\n");
     printf("\nTerminado o progama\n");
-*/
-
-    COORDENADA c = {6,6};
-
-    nodo *atual;
-    atual = init_nodo(0,atual,e->ultima_jogada,c,0,TRUE);
-    printf("MINIMAX: %lf\n",minimax(atual,e,2,NAN,NAN,TRUE,coords));
-    printf("%d %d",coords[2].coluna,coords[2].linha);
-
 
     return 0;
 }

@@ -37,9 +37,7 @@ int interpretador(ESTADO *e) {
         r = jogar(e, coord);
         if (r == 1) return r;
         set_num_com(e,get_num_com(e)+1);
-        //e->num_comando ++;
         set_num_jog_joga(e,get_num_jog_joga(e)+1);
-        //e->num_jogagas_por_j ++;
         comando_gr(e,stdout);
     } else {
         sscanf(linha ,"%s %s",comandos,nome);
@@ -49,29 +47,24 @@ int interpretador(ESTADO *e) {
             comando_gr(e, fp);
             fclose(fp);
             set_num_com(e,get_num_com(e)+1);
-            //e->num_comando++;
         }
         if (strcmp(comandos, "q") == 0) {
             r = comando_q(e);
             set_num_com(e,get_num_com(e)+1);
-            //e->num_comando++;
         }
         if (strcmp(comandos, "ler") == 0) {
             comando_ler(e, nome);
             set_num_com(e,get_num_com(e)+1);
-            //e->num_comando++;
         }
         if (strcmp(comandos, "movs") == 0) {
             comando_movs(e, stdout);
             set_num_com(e,get_num_com(e)+1);
-            //e->num_comando++;
         }
         if (strcmp(comandos, "pos") == 0) {
             int n;
             sscanf(nome,"%d",&n);
             comando_pos(e,n);
             set_num_com(e,get_num_com(e)+1);
-            //e->num_comando++;
         }
     }
 

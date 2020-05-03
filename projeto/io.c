@@ -85,7 +85,6 @@ void comando_ler(ESTADO *e, char nome[]){
             temp = fgetc(fp);
             if (temp == EOF) break;
         }
-        //set_num_jog_joga(e,n_jogadas_p_jog);
         if (get_num_jog_joga(e) % 2 == 1){
             set_jog_atual(e,2);
             set_num_jog(e, (get_num_jog_joga(e)+1)/2);

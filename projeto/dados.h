@@ -176,7 +176,8 @@ CASA get_casa(ESTADO *e, int col, int lin);
 */
 void set_casa (ESTADO *e, int col, int lin, CASA casa);
 
-/*brief Devolve o valor de uma coordenada do jogador 1
+/**
+\brief Devolve o valor de uma coordenada do jogador 1
 @param e Apontador para o estado
 @param n Posição no array
 @returns uma coordenada

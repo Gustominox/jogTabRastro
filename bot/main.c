@@ -1,10 +1,7 @@
 #include "dados.h"
-#include "interface.h"
 #include "logica.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include "listas.h"
 #include "io.h"
 #include "bot.h"
 

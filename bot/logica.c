@@ -13,7 +13,6 @@ int jogar(ESTADO *e, COORDENADA c) {
     r = jogada_invalida(e,c);
     if (r == 1)
         return r;
-    printf("jogar %d %d\n", c.coluna, c.linha);
     set_casa(e,get_ult_jog(e).coluna-1,get_ult_jog(e).linha-1,PRETA);
     //e->tab [e->ultima_jogada.coluna - 1][e->ultima_jogada.linha - 1] = PRETA;
     set_casa(e,c.coluna - 1,c.linha - 1, BRANCA);

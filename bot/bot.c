@@ -41,7 +41,7 @@ COORDENADA jog_random(ESTADO *e){
 }
 
 COORDENADA jog(ESTADO *e) {
-    COORDENADA c = {5, 5};
+    COORDENADA c = get_ult_jog(e);
     nodo *atual = (nodo *) malloc(sizeof(nodo));
     atual = init_nodo(0, atual, c, 0);
     BOOL caminh[8][8];

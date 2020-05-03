@@ -95,7 +95,6 @@ void comando_ler(ESTADO *e, char nome[]){
             set_num_jog(e, get_num_jog_joga(e)/2);
         }
     }
-    comando_gr(e,stdout);
 }
 
 

@@ -48,6 +48,5 @@ COORDENADA jog(ESTADO *e) {
     iguala_tab(e,caminh);
     double minmax = minimax(atual, e, 8, NAN, NAN, TRUE,caminh);
     COORDENADA r = print_rede(atual->nodos, 100, minmax);
-    printf("RESULTADO: %d %d :%lf\n", r.coluna,r.linha,minmax);
     return r;
 }

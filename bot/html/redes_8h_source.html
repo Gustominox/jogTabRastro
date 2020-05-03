@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Li2Pl7g02: Código-Fonte de redes.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Li2Pl7g02
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('redes_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">redes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="redes_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef RASTRO_REDES_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define RASTRO_REDES_H</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dados_8h.html">dados.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="redes_8h.html#ae4343d882310b4cf47638a1465eadaed">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnodo.html">nodo</a> * <a class="code" href="redes_8h.html#ae4343d882310b4cf47638a1465eadaed">rede</a>[8];</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structnodo.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnodo.html">nodo</a>{</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structnodo.html#a629a84853eaaade078b42b3a36a408e2">   19</a></span>&#160;    <a class="code" href="structCOORDENADA.html">COORDENADA</a> <a class="code" href="structnodo.html#a629a84853eaaade078b42b3a36a408e2">inicial</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structnodo.html#a8e90d00854c70f968c9c336592cabbb4">   20</a></span>&#160;    <a class="code" href="structCOORDENADA.html">COORDENADA</a> <span class="keyword">final</span>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structnodo.html#ad9af03d4d3cfe325790568dc7a99e479">   21</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structnodo.html#ad9af03d4d3cfe325790568dc7a99e479">peso</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structnodo.html#a1cf8cb352c89ccfdb42abe37dd5ceede">   22</a></span>&#160;    rede <a class="code" href="structnodo.html#a1cf8cb352c89ccfdb42abe37dd5ceede">nodos</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}<a class="code" href="redes_8h.html#a93778e963712308112f6222068a54474">nodo</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="structnodo.html">nodo</a> *<a class="code" href="redes_8h.html#a7fe7b5d9aafc4cd2f2d3afa8a12ab744">init_nodo</a> (<span class="keywordtype">double</span> peso_nd_ant, <a class="code" href="structnodo.html">nodo</a> *nodol, <a class="code" href="structCOORDENADA.html">COORDENADA</a> <span class="keyword">final</span>, <a class="code" href="structCOORDENADA.html">COORDENADA</a> <a class="code" href="structnodo.html#a629a84853eaaade078b42b3a36a408e2">inicial</a>, <span class="keywordtype">double</span> <a class="code" href="structnodo.html#ad9af03d4d3cfe325790568dc7a99e479">peso</a>,<a class="code" href="dados_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a> player);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">double</span> <a class="code" href="redes_8h.html#abeffa18b1af8bd53e88347d0d4abb4de">calcular_peso_nodo</a>(<a class="code" href="structCOORDENADA.html">COORDENADA</a> i, <a class="code" href="structCOORDENADA.html">COORDENADA</a> f,<a class="code" href="dados_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a> player);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">int</span> <a class="code" href="redes_8h.html#a7375fcb92654ae749be9d2da85208086">criar_rede</a> (<a class="code" href="structnodo.html">nodo</a> *nodol,<a class="code" href="structESTADO.html">ESTADO</a> *e,<a class="code" href="dados_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a> player);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="structnodo.html">nodo</a> *<a class="code" href="redes_8h.html#ab90e17698fe3b73450a88bcf3d87ca93">menor_peso</a>(<a class="code" href="structnodo.html">nodo</a> *rede[],<span class="keywordtype">int</span> k);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="redes_8h.html#a8240d61b670b2f6ffdd0e3dfa7ac99af">iguala_tab</a>(<a class="code" href="structESTADO.html">ESTADO</a> *e);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> <a class="code" href="redes_8h.html#afa052f7e9be70bd5c814b6ce8b305e37">trocarNodos</a>(<a class="code" href="structnodo.html">nodo</a> *nodo1, <a class="code" href="structnodo.html">nodo</a> *nodo2);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">int</span> <a class="code" href="redes_8h.html#a6348f74adafd775ed9959de3976e2239">organiza_rede</a>(<a class="code" href="structnodo.html">nodo</a> *rede[]);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> <a class="code" href="redes_8h.html#ade5489d3c02f7c8485b511256b312ca5">print_rede</a>(<a class="code" href="structnodo.html">nodo</a> *rede[],<span class="keywordtype">int</span> num_nodos);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">double</span> <a class="code" href="redes_8h.html#a7b5f0e385f07d7cef697d414989b8a3e">max</a>(<span class="keywordtype">double</span> val1,<span class="keywordtype">double</span> val2);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">double</span> <a class="code" href="redes_8h.html#afd7ff9da701b70c455f8177b15e8b7eb">min</a>(<span class="keywordtype">double</span> val1,<span class="keywordtype">double</span> val2);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">double</span> <a class="code" href="redes_8h.html#adacb05e9250e8f4030d594a2dc4439a7">minimax</a>(<a class="code" href="structnodo.html">nodo</a> *nodol, <a class="code" href="structESTADO.html">ESTADO</a> *e, <span class="keywordtype">int</span> depth, <span class="keywordtype">double</span> alpha, <span class="keywordtype">double</span> beta, <a class="code" href="dados_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a> player, <a class="code" href="structCOORDENADA.html">COORDENADA</a> *arr);</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif //RASTRO_REDES_H</span></div><div class="ttc" id="redes_8h_html_a8240d61b670b2f6ffdd0e3dfa7ac99af"><div class="ttname"><a href="redes_8h.html#a8240d61b670b2f6ffdd0e3dfa7ac99af">iguala_tab</a></div><div class="ttdeci">void iguala_tab(ESTADO *e)</div><div class="ttdoc">Iguala os valores do tabuleiro com uma matriz de igual tamanho, em que uma peça PRETA é true e qualqu...</div><div class="ttdef"><b>Definition:</b> redes.c:200</div></div>
+<div class="ttc" id="structnodo_html_a629a84853eaaade078b42b3a36a408e2"><div class="ttname"><a href="structnodo.html#a629a84853eaaade078b42b3a36a408e2">nodo::inicial</a></div><div class="ttdeci">COORDENADA inicial</div><div class="ttdef"><b>Definition:</b> redes.h:19</div></div>
+<div class="ttc" id="structESTADO_html"><div class="ttname"><a href="structESTADO.html">ESTADO</a></div><div class="ttdoc">Tipo de dados para o estado. </div><div class="ttdef"><b>Definition:</b> dados.h:68</div></div>
+<div class="ttc" id="redes_8h_html_afa052f7e9be70bd5c814b6ce8b305e37"><div class="ttname"><a href="redes_8h.html#afa052f7e9be70bd5c814b6ce8b305e37">trocarNodos</a></div><div class="ttdeci">void trocarNodos(nodo *nodo1, nodo *nodo2)</div><div class="ttdoc">Troca os nodos de posição um com o outro. </div><div class="ttdef"><b>Definition:</b> redes.c:102</div></div>
+<div class="ttc" id="structnodo_html_a1cf8cb352c89ccfdb42abe37dd5ceede"><div class="ttname"><a href="structnodo.html#a1cf8cb352c89ccfdb42abe37dd5ceede">nodo::nodos</a></div><div class="ttdeci">rede nodos</div><div class="ttdef"><b>Definition:</b> redes.h:22</div></div>
+<div class="ttc" id="redes_8h_html_abeffa18b1af8bd53e88347d0d4abb4de"><div class="ttname"><a href="redes_8h.html#abeffa18b1af8bd53e88347d0d4abb4de">calcular_peso_nodo</a></div><div class="ttdeci">double calcular_peso_nodo(COORDENADA i, COORDENADA f, BOOL player)</div><div class="ttdoc">Calcula o peso do nodo, pelo Teorema de Pitágoras. </div><div class="ttdef"><b>Definition:</b> redes.c:129</div></div>
+<div class="ttc" id="redes_8h_html_a7375fcb92654ae749be9d2da85208086"><div class="ttname"><a href="redes_8h.html#a7375fcb92654ae749be9d2da85208086">criar_rede</a></div><div class="ttdeci">int criar_rede(nodo *nodol, ESTADO *e, BOOL player)</div><div class="ttdoc">Para um dado nodo, inicia os nodos contidos no seu array &quot;nodos&quot;. </div><div class="ttdef"><b>Definition:</b> redes.c:139</div></div>
+<div class="ttc" id="dados_8h_html"><div class="ttname"><a href="dados_8h.html">dados.h</a></div><div class="ttdoc">Definição do estado e das funções que o manipulam. </div></div>
+<div class="ttc" id="structnodo_html_ad9af03d4d3cfe325790568dc7a99e479"><div class="ttname"><a href="structnodo.html#ad9af03d4d3cfe325790568dc7a99e479">nodo::peso</a></div><div class="ttdeci">double peso</div><div class="ttdef"><b>Definition:</b> redes.h:21</div></div>
+<div class="ttc" id="redes_8h_html_adacb05e9250e8f4030d594a2dc4439a7"><div class="ttname"><a href="redes_8h.html#adacb05e9250e8f4030d594a2dc4439a7">minimax</a></div><div class="ttdeci">double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, COORDENADA *arr)</div><div class="ttdoc">Objetivo minmax, todo augusto comentarios + explicaçao. </div><div class="ttdef"><b>Definition:</b> redes.c:28</div></div>
+<div class="ttc" id="structCOORDENADA_html"><div class="ttname"><a href="structCOORDENADA.html">COORDENADA</a></div><div class="ttdoc">Tipo de dados para as coordenadas. </div><div class="ttdef"><b>Definition:</b> dados.h:47</div></div>
+<div class="ttc" id="redes_8h_html_afd7ff9da701b70c455f8177b15e8b7eb"><div class="ttname"><a href="redes_8h.html#afd7ff9da701b70c455f8177b15e8b7eb">min</a></div><div class="ttdeci">double min(double val1, double val2)</div><div class="ttdoc">Calcula o valor mínimo entre os dois doubles. </div><div class="ttdef"><b>Definition:</b> redes.c:20</div></div>
+<div class="ttc" id="redes_8h_html_a7b5f0e385f07d7cef697d414989b8a3e"><div class="ttname"><a href="redes_8h.html#a7b5f0e385f07d7cef697d414989b8a3e">max</a></div><div class="ttdeci">double max(double val1, double val2)</div><div class="ttdoc">Calcula o valor máximo entre dois doubles. </div><div class="ttdef"><b>Definition:</b> redes.c:13</div></div>
+<div class="ttc" id="structnodo_html"><div class="ttname"><a href="structnodo.html">nodo</a></div><div class="ttdoc">Tipo de dados para o nodo. </div><div class="ttdef"><b>Definition:</b> redes.h:18</div></div>
+<div class="ttc" id="redes_8h_html_a93778e963712308112f6222068a54474"><div class="ttname"><a href="redes_8h.html#a93778e963712308112f6222068a54474">nodo</a></div><div class="ttdeci">struct nodo nodo</div><div class="ttdoc">Tipo de dados para o nodo. </div></div>
+<div class="ttc" id="redes_8h_html_a6348f74adafd775ed9959de3976e2239"><div class="ttname"><a href="redes_8h.html#a6348f74adafd775ed9959de3976e2239">organiza_rede</a></div><div class="ttdeci">int organiza_rede(nodo *rede[])</div><div class="ttdoc">Organiza a rede, segundo uma modificação do valor sort em que os nodos inválidos são postos no fim do...</div><div class="ttdef"><b>Definition:</b> redes.c:91</div></div>
+<div class="ttc" id="redes_8h_html_ab90e17698fe3b73450a88bcf3d87ca93"><div class="ttname"><a href="redes_8h.html#ab90e17698fe3b73450a88bcf3d87ca93">menor_peso</a></div><div class="ttdeci">nodo * menor_peso(nodo *rede[], int k)</div><div class="ttdoc">Dado uma rede e o seu tamanho, retorna o nodo de menor peso. </div><div class="ttdef"><b>Definition:</b> redes.c:189</div></div>
+<div class="ttc" id="redes_8h_html_a7fe7b5d9aafc4cd2f2d3afa8a12ab744"><div class="ttname"><a href="redes_8h.html#a7fe7b5d9aafc4cd2f2d3afa8a12ab744">init_nodo</a></div><div class="ttdeci">nodo * init_nodo(double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso, BOOL player)</div><div class="ttdoc">Inicia um nodo com os valores recebidos na função e aloca o espaço de memória para os próximos nodos...</div><div class="ttdef"><b>Definition:</b> redes.c:120</div></div>
+<div class="ttc" id="redes_8h_html_ae4343d882310b4cf47638a1465eadaed"><div class="ttname"><a href="redes_8h.html#ae4343d882310b4cf47638a1465eadaed">rede</a></div><div class="ttdeci">struct nodo * rede[8]</div><div class="ttdoc">Definição de um array de pointers de nodos com tamanho 8. </div><div class="ttdef"><b>Definition:</b> redes.h:13</div></div>
+<div class="ttc" id="redes_8h_html_ade5489d3c02f7c8485b511256b312ca5"><div class="ttname"><a href="redes_8h.html#ade5489d3c02f7c8485b511256b312ca5">print_rede</a></div><div class="ttdeci">void print_rede(nodo *rede[], int num_nodos)</div><div class="ttdoc">Mostra os valores da rede, função criada para debug. </div><div class="ttdef"><b>Definition:</b> redes.c:183</div></div>
+<div class="ttc" id="dados_8h_html_a3e5b8192e7d9ffaf3542f1210aec18dd"><div class="ttname"><a href="dados_8h.html#a3e5b8192e7d9ffaf3542f1210aec18dd">BOOL</a></div><div class="ttdeci">BOOL</div><div class="ttdoc">Tipo de dados para BOOL e testar se o caminho é válido. </div><div class="ttdef"><b>Definition:</b> dados.h:38</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="redes_8h.html">redes.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

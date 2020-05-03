@@ -1,0 +1,112 @@
+\hypertarget{listas_8h}{}\section{Referência ao ficheiro listas.\+h}
+\label{listas_8h}\index{listas.\+h@{listas.\+h}}
+
+
+Definição das funções referentes às listas ligadas.  
+
+
+{\ttfamily \#include \char`\"{}dados.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para listas.\+h\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLISTA}{L\+I\+S\+TA}
+\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_aba6582a76bbeab43ecc056948ade65b0}{L\+I\+S\+TA}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_ae3b99323b6f8f35d80bb69ff1a27985e}{criar\+\_\+lista} ()
+\item 
+\hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_a37ba5fc3cfddb6bc94d4b54b00bc696e}{insere\+\_\+cabeca} (\hyperlink{structLISTA}{L\+I\+S\+TA} L, void $\ast$valor)
+\item 
+void $\ast$ \hyperlink{listas_8h_abfcb205f3eb670157be0d1221021714b}{devolve\+\_\+cabeca} (\hyperlink{structLISTA}{L\+I\+S\+TA} L)
+\item 
+\hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_ad9380152361127432c55c1c6067e05ae}{proximo} (\hyperlink{structLISTA}{L\+I\+S\+TA} L)
+\item 
+\hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_a9026a681a68322b5ec7f07137b864cbd}{remove\+\_\+cabeca} (\hyperlink{structLISTA}{L\+I\+S\+TA} L)
+\item 
+int \hyperlink{listas_8h_a4c10928f7acaa4e3de3760cea0dfd9c0}{lista\+\_\+esta\+\_\+vazia} (\hyperlink{structLISTA}{L\+I\+S\+TA} L)
+\item 
+void \hyperlink{listas_8h_acc8d038885fcd71da19fcfbded32a101}{ler\+\_\+lista\+\_\+double} (\hyperlink{structLISTA}{L\+I\+S\+TA} L)
+\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{listas_8h_ab425763d849ab631ae5342ddecbc1213}{l}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Definição das funções referentes às listas ligadas. 
+
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{listas_8h_aba6582a76bbeab43ecc056948ade65b0}\label{listas_8h_aba6582a76bbeab43ecc056948ade65b0}} 
+\index{listas.\+h@{listas.\+h}!L\+I\+S\+TA@{L\+I\+S\+TA}}
+\index{L\+I\+S\+TA@{L\+I\+S\+TA}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{L\+I\+S\+TA}{LISTA}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structLISTA}{L\+I\+S\+TA} \hyperlink{structLISTA}{L\+I\+S\+TA}}
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{listas_8h_ae3b99323b6f8f35d80bb69ff1a27985e}\label{listas_8h_ae3b99323b6f8f35d80bb69ff1a27985e}} 
+\index{listas.\+h@{listas.\+h}!criar\+\_\+lista@{criar\+\_\+lista}}
+\index{criar\+\_\+lista@{criar\+\_\+lista}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{criar\+\_\+lista()}{criar\_lista()}}
+{\footnotesize\ttfamily \hyperlink{structLISTA}{L\+I\+S\+TA} criar\+\_\+lista (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_abfcb205f3eb670157be0d1221021714b}\label{listas_8h_abfcb205f3eb670157be0d1221021714b}} 
+\index{listas.\+h@{listas.\+h}!devolve\+\_\+cabeca@{devolve\+\_\+cabeca}}
+\index{devolve\+\_\+cabeca@{devolve\+\_\+cabeca}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{devolve\+\_\+cabeca()}{devolve\_cabeca()}}
+{\footnotesize\ttfamily void$\ast$ devolve\+\_\+cabeca (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_a37ba5fc3cfddb6bc94d4b54b00bc696e}\label{listas_8h_a37ba5fc3cfddb6bc94d4b54b00bc696e}} 
+\index{listas.\+h@{listas.\+h}!insere\+\_\+cabeca@{insere\+\_\+cabeca}}
+\index{insere\+\_\+cabeca@{insere\+\_\+cabeca}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{insere\+\_\+cabeca()}{insere\_cabeca()}}
+{\footnotesize\ttfamily \hyperlink{structLISTA}{L\+I\+S\+TA} insere\+\_\+cabeca (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L,  }\item[{void $\ast$}]{valor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_acc8d038885fcd71da19fcfbded32a101}\label{listas_8h_acc8d038885fcd71da19fcfbded32a101}} 
+\index{listas.\+h@{listas.\+h}!ler\+\_\+lista\+\_\+double@{ler\+\_\+lista\+\_\+double}}
+\index{ler\+\_\+lista\+\_\+double@{ler\+\_\+lista\+\_\+double}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{ler\+\_\+lista\+\_\+double()}{ler\_lista\_double()}}
+{\footnotesize\ttfamily void ler\+\_\+lista\+\_\+double (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_a4c10928f7acaa4e3de3760cea0dfd9c0}\label{listas_8h_a4c10928f7acaa4e3de3760cea0dfd9c0}} 
+\index{listas.\+h@{listas.\+h}!lista\+\_\+esta\+\_\+vazia@{lista\+\_\+esta\+\_\+vazia}}
+\index{lista\+\_\+esta\+\_\+vazia@{lista\+\_\+esta\+\_\+vazia}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{lista\+\_\+esta\+\_\+vazia()}{lista\_esta\_vazia()}}
+{\footnotesize\ttfamily int lista\+\_\+esta\+\_\+vazia (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_ad9380152361127432c55c1c6067e05ae}\label{listas_8h_ad9380152361127432c55c1c6067e05ae}} 
+\index{listas.\+h@{listas.\+h}!proximo@{proximo}}
+\index{proximo@{proximo}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{proximo()}{proximo()}}
+{\footnotesize\ttfamily \hyperlink{structLISTA}{L\+I\+S\+TA} proximo (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{listas_8h_a9026a681a68322b5ec7f07137b864cbd}\label{listas_8h_a9026a681a68322b5ec7f07137b864cbd}} 
+\index{listas.\+h@{listas.\+h}!remove\+\_\+cabeca@{remove\+\_\+cabeca}}
+\index{remove\+\_\+cabeca@{remove\+\_\+cabeca}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{remove\+\_\+cabeca()}{remove\_cabeca()}}
+{\footnotesize\ttfamily \hyperlink{structLISTA}{L\+I\+S\+TA} remove\+\_\+cabeca (\begin{DoxyParamCaption}\item[{\hyperlink{structLISTA}{L\+I\+S\+TA}}]{L }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentação das variáveis}
+\mbox{\Hypertarget{listas_8h_ab425763d849ab631ae5342ddecbc1213}\label{listas_8h_ab425763d849ab631ae5342ddecbc1213}} 
+\index{listas.\+h@{listas.\+h}!l@{l}}
+\index{l@{l}!listas.\+h@{listas.\+h}}
+\subsubsection{\texorpdfstring{l}{l}}
+{\footnotesize\ttfamily \hyperlink{structLISTA}{L\+I\+S\+TA} l}
+

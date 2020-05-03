@@ -165,6 +165,4 @@ void comando_movs(ESTADO *e,FILE *fp){
             cont ++;
         }
     }
-    printf("\n%d %d %d %d\n",get_num_jog_joga(e),get_jog_atual(e),get_num_com(e),get_num_jog(e));
-    printf("\nultima jogada:%d %d\n",get_ult_jog(e).coluna,get_ult_jog(e).linha);
 }

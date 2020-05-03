@@ -7,7 +7,6 @@ Construção do código correspondente às funções que dizem respeito às list
 #include "stdio.h"
 #include "listas.h"
 #include "dados.h"
-#include "redes.h"
 LISTA criar_lista(){
     return NULL;
 }
@@ -56,18 +55,4 @@ int tmh_lista (LISTA L){
         n++;
     }
     return n;
-}
-LISTA lista_cor_pos(ESTADO *e, COORDENADA c){
-    LISTA lista = criar_lista();
-
-     for (int i = -1; i < 2; i++)
-        for (int j = -1; j < 2; j++)
-            if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + j > 0 && c.linha + j < 9) {
-                CASA h = get_casa(e, c.coluna + i, c.linha + j);
-                if (h == VAZIO || h == UM || h == DOIS) {
-                    COORDENADA *p = coor_create(c.coluna + i, c.linha + j);
-                    lista = insere_cabeca(lista, p);
-                }
-            }
-     return lista;
 }

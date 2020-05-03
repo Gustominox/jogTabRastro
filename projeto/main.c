@@ -53,10 +53,8 @@ Pequena introducao
 #include <stdlib.h>
 #include <math.h>
 #include "listas.h"
-#include "redes.h"
-#include "bot.h"
 #include "io.h"
-/*
+
 int main(){
     ESTADO *e = inicializar_estado();
     comando_gr(e,stdout);
@@ -72,13 +70,6 @@ int main(){
     if (menu == 3) printf ("\nVenceu o jogador 2.\n");
     if (menu == 4) printf ("\nJogo terminado pelo user.\n");
     printf("\nTerminado o progama\n");
-
-    return 0;
-}
-*/
-int main(){
-    ESTADO *e = inicializar_estado();
-    jog(e);
 
     return 0;
 }

@@ -37,7 +37,7 @@ typedef enum {
     FALSE,
     TRUE
 }BOOL;
-BOOL caminh[8][8];
+
 
 /**
 \brief Tipo de dados para as coordenadas

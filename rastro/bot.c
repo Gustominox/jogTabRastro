@@ -26,17 +26,14 @@ COORDENADA jog_random(ESTADO *e){
     return r;
 }
 
-COORDENADA jog(ESTADO *e){
-
-    LISTA lista = criar_lista();
-    nodo *atual = (nodo*)malloc(sizeof(nodo));
-    init_nodo(0,atual,get_ult_jog(e),get_ult_jog(e),0);
-    criar_rede(atual,e,TRUE);
-    iguala_tab(e);
-    COORDENADA *coord = (COORDENADA*)malloc(sizeof(COORDENADA));
-    //printf("MINIMAX: %lf\n",minimax(atual,e,2,NAN,NAN,TRUE,coord));
-
-    limpar_lista(lista);
-    printf("%d %d\n", coord->coluna,coord->linha);
-    return *coord;
+COORDENADA jog(ESTADO *e) {
+    COORDENADA c = {5, 5};
+    nodo *atual = (nodo *) malloc(sizeof(nodo));
+    atual = init_nodo(0, atual, c, 0);
+    BOOL caminh[8][8];
+    iguala_tab(e,caminh);
+    double minmax = minimax(atual, e, 8, NAN, NAN, TRUE,caminh);
+    COORDENADA r = print_rede(atual->nodos, 100, minmax);
+    printf("RESULTADO: %d %d :%lf\n", r.coluna,r.linha,minmax);
+    return r;
 }

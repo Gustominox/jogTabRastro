@@ -56,7 +56,7 @@ Pequena introducao
 #include "redes.h"
 #include "bot.h"
 #include "io.h"
-
+/*
 int main(){
     ESTADO *e = inicializar_estado();
     comando_gr(e,stdout);
@@ -75,4 +75,10 @@ int main(){
 
     return 0;
 }
+*/
+int main(){
+    ESTADO *e = inicializar_estado();
+    jog(e);
 
+    return 0;
+}

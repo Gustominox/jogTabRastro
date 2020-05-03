@@ -14,6 +14,7 @@ COORDENADA *coor_create(int col, int lin) {
     c -> linha = lin;
     return c;
 }
+
 double max(double val1,double val2){
     if (isnan(val1)) return val2;
     if (isnan(val2)) return val1;
@@ -28,100 +29,18 @@ double min(double val1,double val2){
     else return val2;
 }
 
-
-double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player,COORDENADA*coord) {
-
-    if (depth == 0 ) {
-        return nodol->peso;
-    }
-
-
-    int num_nodos_val = criar_rede(nodol, e, player);
-    print_rede(nodol->nodos,8);
-
-    if (player == TRUE) {
-        double mineval = nodoInv;
-        for (int i = 0; i < num_nodos_val; ++i) {
-            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, FALSE,coord);
-            mineval = min(mineval, eval);
-            COORDENADA *pnt = coor_create(nodol->nodos[i]->final.coluna,nodol->nodos[i]->final.linha);
-            printf("%d %d\n", pnt->coluna,pnt->linha);
-            if(mineval == eval) coord = pnt;
-            free(pnt);
-            alpha = min(alpha,eval);
-            if (beta <= alpha) break;
-        }
-        printf("eval do nodo %d %d: %lf\n", nodol->final.coluna, nodol->final.linha, mineval);
-        return mineval;
-    } else {
-        double maxeval = nodoInv;
-        for (int i = 0; i < num_nodos_val; ++i) {
-            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, TRUE,coord);
-            maxeval = max(maxeval, eval);
-            COORDENADA *pnt = coor_create(nodol->nodos[i]->final.coluna,nodol->nodos[i]->final.linha);
-            printf("%d %d\n", pnt->coluna,pnt->linha);
-            if(maxeval == eval) coord = pnt;
-            free(pnt);
-            beta = max(beta,eval);
-            if (beta <= alpha) break;
-        }
-        printf("eval do nodo %d %d: %lf\n", nodol->final.coluna, nodol->final.linha, maxeval);
-        return maxeval;
-    }
-}
-
-
-int organiza_rede(nodo *rede[]){
-    int num_nodos_val = 0;
-    for (int j = 7; j >= 0; --j)
-    for (int i = 0; i < j; ++i) {
-    	if (isnan(rede[i]->peso) ) trocarNodos(rede[i],rede[i+1]);
-    }
-    for (int k = 0; k < 8; ++k)
-        if (isnan(rede[k]->peso) != TRUE) num_nodos_val++;
-
-    return num_nodos_val;
-}
-void trocarNodos(nodo *nodo1, nodo *nodo2){
-
-    double auxPeso;
-    COORDENADA auxInicial;
-    COORDENADA auxFinal;
-
-    auxPeso = nodo1->peso;
-    nodo1->peso = nodo2->peso;
-    nodo2->peso = auxPeso;
-
-    auxInicial = nodo1->inicial;
-    nodo1->inicial = nodo2->inicial;
-    nodo2->inicial = auxInicial;
-
-    auxFinal = nodo1->final;
-    nodo1->final = nodo2->final;
-    nodo2->final = auxFinal;
-}
-void init_nodo (double peso_nd_ant,nodo *nodol,COORDENADA inicial, COORDENADA final, double peso){
-    nodol->final = final;
-    nodol->inicial = inicial;
+nodo *init_nodo (double peso_nd_ant,nodo *nodol, COORDENADA place, double peso){
+    nodol->place = place;
     if (isnan(peso_nd_ant) || isnan(peso)) nodol->peso = NAN;
     else nodol->peso = peso_nd_ant+peso;
     for (int i = 0; i < 8 ; i++)
         nodol->nodos[i] = (nodo*)malloc(sizeof(nodo));
+    return nodol;
 }
 
-double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player){
-    float distx = abs(i.coluna - f.coluna);
-    float disty = abs(i.linha - f.linha);
-    float distinit = distx*distx + disty*disty;
-    if (player) return sqrt(distinit);
-    else return sqrt(distinit);
-}
+int criar_rede (nodo *nodol,ESTADO *e,BOOL caminh[8][8]) {
 
-
-
-int criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
-    printf("Criar a rede para o nodo %d %d ...\n", nodol->final.coluna,nodol->final.linha);
-    COORDENADA c = nodol->final;
+    COORDENADA c = nodol->place;
     caminh [c.coluna-1][c.linha-1] = TRUE;
     COORDENADA coord2;
     if (e->jogador_atual == 1){
@@ -132,66 +51,70 @@ int criar_rede (nodo *nodol,ESTADO *e,BOOL player) {
         coord2.linha = 8;
     }
 
-    //if(player) printf("jogador %d na direcao: %d %d\n",e->jogador_atual, coord2.coluna,coord2.linha);
-    //else 	printf("jogador %d na direcao: %d %d\n",e->jogador_atual-1, coord2.coluna,coord2.linha);
-
     int k = 0;
     for (int i = c.coluna - 1; i < c.coluna + 2; i++) {
         for (int j = c.linha - 1; j < c.linha + 2; ++j) {
             COORDENADA coord1 = {i,j};
             if ((j > 0 && j < 9) && (i > 0 && i < 9) && (caminh[i-1][j-1] == FALSE) && (i != c.coluna || j != c.linha)) {
-                nodo *atual = (nodo*)malloc(sizeof(nodo));
-                init_nodo(nodol->peso,atual,c,coord1,calcular_peso_nodo(coord1,coord2,player));
-                nodol->nodos[k] = atual;
-                free(atual);
-                printf("%d %d\n", nodol->nodos[k]->final.coluna,nodol->nodos[k]->final.linha);
-                //printf("%d: de %d %d para %d %d: ",k,c.coluna,c.linha, i, j);
-                //printf("%lf\n",nodol->nodos[k]->peso);
+                init_nodo(nodol->peso,nodol->nodos[k],coord1,calcular_peso_nodo(coord1,coord2));
                 k++;
-            } else{
-                //init_nodo(nodol->peso,nodol->nodos[k],c,coord1,nodoInv,player);
-                //printf("nodo invalido: de %d %d para %d %d: \n",c.coluna,c.linha, i, j);
-                //printf("%lf\n",nodol->nodos[k]->peso);
-                //if (caminh[i-1][j-1] != TRUE)
-                //	k++;
             }
         }
     }
-    print_rede(nodol->nodos,8);
-    printf("... Fim da rede\n");
     return k;
-    //int num_n = organiza_rede(nodol->nodos);
-    //print_rede(nodol->nodos);
-    //nodo *nodog = menor_peso(nodol->nodos,k);
-    //if( nodog->peso != 0.0 )//{
-    //criar_rede(nodog,e);
-    // debug: printf("nodo escolhido: %d %d\n",nodog->final.coluna,nodog->final.linha);
-    //          } else printf("fim no nodo: %d %d\n",nodog->final.coluna,nodog->final.linha);
 }
-void print_rede(nodo *rede[],int num_nodos){
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, BOOL caminh[8][8]) {
+
+    if (depth == 0) {
+        return nodol->peso;
+    }
+
+    int num_nodos_val = criar_rede(nodol, e, caminh);
+
+    if (player == TRUE) {
+        double mineval = nodoInv;
+        for (int i = 0; i < num_nodos_val; ++i) {
+            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, FALSE,caminh);
+            if (!isnan(eval)) mineval = min(mineval, eval);
+            alpha = min(alpha,eval);
+            if (beta <= alpha) break;
+        }
+        nodol->peso = mineval;
+        return mineval;
+    } else {
+        double maxeval = nodoInv;
+        for (int i = 0; i < num_nodos_val; ++i) {
+            double eval = minimax(nodol->nodos[i], e, depth - 1, alpha, beta, TRUE,caminh);
+            if (!isnan(eval)) maxeval = max(maxeval, eval);
+            beta = max(beta,eval);
+            if (beta <= alpha) break;
+        }
+        nodol->peso = maxeval;
+        return maxeval;
+    }
+}
+
+
+double calcular_peso_nodo(COORDENADA i, COORDENADA f){
+    float distx = abs(i.coluna - f.coluna);
+    float disty = abs(i.linha - f.linha);
+    float distinit = distx*distx + disty*disty;
+    return sqrt(distinit);
+}
+
+COORDENADA print_rede(nodo *rede[],int num_nodos,double res){
     for (int i = 0; i < num_nodos; ++i) {
-        printf(" de %d %d para %d %d: ",rede[i]->inicial.coluna,rede[i]->inicial.linha,rede[i]->final.coluna, rede[i]->final.linha);
-        printf("%lf\n",rede[i]->peso);
+        if (rede[i]->peso == res) return rede[i]->place;
     }
-}
-nodo *menor_peso(nodo *rede[],int k) {
-    int nodo = 0;
-    while(rede[nodo]->peso == nodoInv) nodo += 1;
-
-    for (int i = 1; i < k; i++){
-        if (rede[i]->peso != nodoInv)
-            if (rede[nodo]->peso > rede[i]->peso) nodo = i;
-    }
-    return rede[nodo];
+    return rede[0]->place;
 }
 
-void iguala_tab(ESTADO *e){
+
+void iguala_tab(ESTADO *e,BOOL caminh[8][8]){
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
-            if(e->tab[i][j] == PRETA)
-                caminh[i][j] = TRUE;
+            if(e->tab[i][j] == PRETA) caminh[i][j] = TRUE;
+            else caminh[i][j] = FALSE;
         }
     }
 }
-
-

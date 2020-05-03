@@ -16,11 +16,12 @@ typedef struct nodo * rede[8];
 \brief Tipo de dados para o nodo
 */
 typedef struct nodo{
-    COORDENADA inicial;
-    COORDENADA final;
+    COORDENADA place;
     double peso;
     rede nodos;
 }nodo;
+
+
 
 /**
 \brief Inicia um nodo com os valores recebidos na função e aloca o espaço de memória para os próximos nodos
@@ -32,7 +33,7 @@ typedef struct nodo{
 @param player Variável que indica se é o jogador atual a jogar ou não
 @returns o nodo iniciado
 */
-void init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA inicial, double peso);
+nodo *init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA place, double peso);
 
 /**
 \brief Calcula o peso do nodo, pelo Teorema de Pitágoras
@@ -41,7 +42,7 @@ void init_nodo (double peso_nd_ant, nodo *nodol, COORDENADA final, COORDENADA in
 @param player Variável que indica se é o jogador atual a jogar ou não
 @returns o peso do nodo
 */
-double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player);
+double calcular_peso_nodo(COORDENADA i, COORDENADA f);
 
 /**
 \brief Para um dado nodo, inicia os nodos contidos no seu array "nodos"
@@ -50,7 +51,7 @@ double calcular_peso_nodo(COORDENADA i, COORDENADA f,BOOL player);
 @param player Variável que indica se é o jogador atual a jogar ou não
 @returns o tamanho da rede
 */
-int criar_rede (nodo *nodol,ESTADO *e,BOOL player);
+int criar_rede (nodo *nodol,ESTADO *e,BOOL caminh[8][8]);
 
 /**
 \brief Dado uma rede e o seu tamanho, retorna o nodo de menor peso
@@ -58,36 +59,15 @@ int criar_rede (nodo *nodol,ESTADO *e,BOOL player);
 @param k O tamanho do array
 @returns o nodo de menor peso
 */
-nodo *menor_peso(nodo *rede[],int k);
 
-/**
-\brief Iguala os valores do tabuleiro com uma matriz de igual tamanho, em que uma peça __PRETA__ é *true* e qualquer outra
- peça é *false*.
-@param e Apontador para o estado
-*/
-void iguala_tab(ESTADO *e);
-
-/**
-\brief Troca os nodos de posição um com o outro
-@param nodo1 Primeiro nodo
-@param nodo2 Segundo nodo
-@returns o nodo de menor peso
-*/
-void trocarNodos(nodo *nodo1, nodo *nodo2);
-
-/**
-\brief Organiza a rede, segundo uma modificação do valor sort em que os nodos inválidos são postos no fim do array
-@param rede Array de pointers de nodos
-@returns número de nodos válidos
-*/
-int organiza_rede(nodo *rede[]);
+void iguala_tab(ESTADO *e,BOOL caminh[8][8]);
 
 /**
 \brief Mostra os valores da rede, função criada para debug
 @param rede Array de pointers de nodos
 @param num_nodos Tamanho da rede
 */
-void print_rede(nodo *rede[],int num_nodos);
+COORDENADA print_rede(nodo *rede[],int num_nodos,double res);
 
 /**
 \brief Calcula o valor máximo entre dois doubles
@@ -116,6 +96,6 @@ double min(double val1,double val2);
 @param arr
 @returns o nodo de menor peso
 */
-double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player, COORDENADA * coord);
+double minimax(nodo *nodol, ESTADO *e, int depth, double alpha, double beta, BOOL player,BOOL caminh[8][8]);
 COORDENADA *coor_create(int col, int lin);
 #endif //RASTRO_REDES_H

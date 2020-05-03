@@ -3,6 +3,5 @@
 -Turno PL7  
 -Grupo 02  
 ### Membros:
-Augusto César Oliveira Campos a93320<br/>
-Ana Paula Oliveira Henriques a93268<br/>
-Paulo Ricardo Santos Pereira a93245<br/>
+a93320 Augusto César Oliveira Campos<br/>
+a93268 Ana Paula Oliveira Henriques<br/>
